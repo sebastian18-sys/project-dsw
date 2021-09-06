@@ -8,23 +8,23 @@ include("base_datos/db.php");
         
         $dni = $_POST['dni-dev'];
         $nombres = $_POST['nombres-dev'];
-        $nombres = $_POST['apellidos-dev']; 
-        $nombres = $_POST['correo-dev']; 
-        $nombres = $_POST['address-dev']; 
-        $nombres = $_POST['telefono-dev']; 
+        $apellidos = $_POST['apellidos-dev']; 
+        $correo = $_POST['correo-dev']; 
+        $direccion = $_POST['address-dev']; 
+        $telefono = $_POST['telefono-dev']; 
         
         // $_SESSION['boleto-covid'] = $boleto;
+        $boleto =  $_SESSION['boleto-changes'];
+        $_SESSION['dni-dev'] = $dni;
+        $_SESSION['cod-boleto-dev'] = $boleto;
+        $_SESSION['email-dev'] = $correo;
 
-
-        $query = "SELECT * FROM boletos WHERE codigo_boleto = '$boleto'";
+        $query = "DELETE FROM boletos WHERE codigo_boleto = '$boleto'";
         $result = mysqli_query($link, $query);
 
         if($result) {
-            $_SESSION['dni'] = $dni;
-            $_SESSION['cod-boleto'] = $boleto;
-            $_SESSION['name'] = $nombre;
-            $_SESSION['lastname'] = $apellidos;
-            header("Location: ./covid-form.php");
+
+            header("Location: ./confirmacion-devolucion.php");
         } else {
             echo "ERROR EN VERIFICAR DECLARACIÓN JURADA";  
         }

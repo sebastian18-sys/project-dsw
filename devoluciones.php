@@ -303,7 +303,7 @@ include("base_datos/db.php");
                                                                 <label>Dirección:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-home" aria-hidden="true"></i>
-                                                                    <input type="email" class="form-control-dates" placeholder="Dirección" name="address-dev" required="required" />
+                                                                    <input type="text" class="form-control-dates" placeholder="Dirección" name="address-dev" required="required" />
                                                                 </div>
                                                             </div>
                                                         </div>
