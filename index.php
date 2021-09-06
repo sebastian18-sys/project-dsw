@@ -123,7 +123,7 @@ include("./base_datos/db.php");
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="hotel-homepage.html">Encomiendas</a></li>
+                            <li><a href="encomiendas/encomiendas.php">Encomiendas</a></li>
                             <li><a href="hotel-listing-left-sidebar.html">Mudanzas</a></li>
                             <!-- <li><a href="hotel-listing-right-sidebar.html">List View Right Sidebar</a></li>
                             <li><a href="hotel-grid-left-sidebar.html">Grid View Left Sidebar</a></li>
