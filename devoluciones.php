@@ -1,3 +1,20 @@
+<?php
+session_start();
+include("base_datos/db.php");
+
+    $id_boleto = $_SESSION['boleto-changes'];
+
+    $nombre = $_SESSION['namePasajero'];
+    $apellidos = $_SESSION['lastnamePasajero'];
+    $correo = $_SESSION['emailPasajero'];
+    $dni = $_SESSION['dniPasajero'];
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,13 +47,8 @@
             <form>
                 <div class="form-group">
                 <div class="input-group">
-                    <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search..."
-                    required
-                    /><span class="input-group-btn"
-                    ><button type="submit" class="btn">
+                    <input type="text" class="form-control" placeholder="Search..." required/><span class="input-group-btn">
+                        <button type="submit" class="btn">
                         <span><i class="fa fa-search"></i></span>
                     </button>
                     </span>
@@ -205,13 +217,6 @@
         <div id="forgot-password" class="innerpage-section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="page-heading">
-                            <h2>Busca tu viaje</h2>
-                            <p>Ingresa datos del viaje</p>
-                            <hr class="heading-line" />
-                        </div>
-                    </div>
                     <!-- end columns -->
                     <div class="col-sm-12">
                         <div class="flex-content">
@@ -234,8 +239,8 @@
                                                             <div class="group">
                                                                 <i class="fa fa-id-card" aria-hidden="true"></i>
                                                                 <select class="form-control-dates" name="opcion-motivo" id="">
-                                                                            <option value="">F mi viaje</option>
-                                                                        </select>
+                                                                    <option value="">F mi viaje</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -262,7 +267,7 @@
                                                                 <label>DNI:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-id-card" aria-hidden="true"></i>
-                                                                    <input type="text" class="form-control-dates" placeholder="DNI" name="dni-covid" readonly="readonly" required="required" value="<?php echo $dnir ?>" />
+                                                                    <input type="text" class="form-control-dates" placeholder="DNI" name="dni-covid" readonly="readonly" required="required" value="<?php echo $dni ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -271,7 +276,7 @@
                                                                 <label>Nombres:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                                                    <input type="text" class="form-control-dates" placeholder="Nombres" name="nombres-covid" readonly="readonly" required="required" value="<?php echo $nombrer ?>" />
+                                                                    <input type="text" class="form-control-dates" placeholder="Nombres" name="nombres-covid" readonly="readonly" required="required" value="<?php echo $nombre ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -280,7 +285,7 @@
                                                                 <label>Apellidos:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                                                    <input type="text" class="form-control-dates" placeholder="Apellidos" name="apellidos-covid" readonly="readonly" required="required" value="<?php echo $apellidosr ?>" />
+                                                                    <input type="text" class="form-control-dates" placeholder="Apellidos" name="apellidos-covid" readonly="readonly" required="required" value="<?php echo $apellidos ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -289,7 +294,7 @@
                                                                 <label>Correo:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                                    <input type="email" class="form-control-dates" placeholder="Correo" name="correo-covid" required="required" />
+                                                                    <input type="email" class="form-control-dates" placeholder="Correo" name="correo-covid" required="required" value="<?php echo $correo ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -448,8 +453,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12 copy" id="copyright">
-                        <p>Copyright © 2021<a href="http://www.bootstrapmb.com/">.Todos los derechos reservados</a>| Wiñaymarca SAC
-                        </p>
+                        <p>Copyright © 2021<a href="http://www.bootstrapmb.com/">.Todos los derechos reservados</a>| Wiñaymarca SAC</p>
                     </div>
                 </div>
                 <!-- end row -->

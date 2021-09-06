@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Buscar pasaje</title>
+    <title>Covid-19</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" id="cpswitch" href="css/orange.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <!--Jquery UI Stylesheet-->
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
 </head>
 
 <body>
@@ -42,7 +40,6 @@
         <!-- end overlay-content -->
     </div>
     <!-- end overlay -->
-
 
     <nav class="navbar navbar-default main-navbar navbar-custom navbar-white" id="mynavbar-1">
         <div class="container">
@@ -101,7 +98,7 @@
                             <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="./faq.html" class="dropdown-toggle">Ayuda
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
@@ -111,6 +108,7 @@
                     <li class="dropdown">
                         <a href="./contact-us.html" class="dropdown-toggle">Contacto
                             <span>
+                                <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
@@ -175,13 +173,15 @@
 
     </div>
     <!-- end sidenav-content -->
-    <!--========================= PAGE-COVER ======================-->
-    <section class="page-cover back-size" id="cover-flight-grid-list">
+    <!--================== PAGE-COVER ==================-->
+    <section class="page-cover" id="cover-forgot-password">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="page-title">Registro Declaración Jurada</h1>
+                    <h1 class="page-title">¡A Viajar Seguro!</h1>
                     <ul class="breadcrumb">
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li class="active">Covid-19</li>
                     </ul>
                 </div>
                 <!-- end columns -->
@@ -192,61 +192,75 @@
     </section>
     <!-- end page-cover -->
     <!--===== INNERPAGE-WRAPPER ====-->
+    <!-- <p>HAZ ALGO PE TROLGIO</p> -->
     <section class="innerpage-wrapper">
-        <div id="flight-listings" class="innerpage-section-padding">
+        <div id="forgot-password" class="innerpage-section-padding">
             <div class="container">
                 <div class="row">
 
-                    <!-- end columns -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 content-side">
-                        <div class="list-block main-block f-list-block">
-                            <!-- <div class="container">
-                                <div class="row"> -->
-                            <div class="container-head">
-                                <h2>Wiñaymarca</h2>
-                            </div>
-                            <div class="container-text">
-                                <div class="text-datos">
-                                    <h3>Declaración Jurada Registrada </h3>
-                                    <!-- <h3>gracias por tu pago</h3> -->
-                                </div>
-                                <!-- <p>En breve te enviaremos un email donde estará tu <br>constancia de operación</p> -->
-                                <div class="container-monto">
-                                    <h4>En breve le enviaremos a su correo un documento para su descarga</h4>
-
-                                </div>
-                                <p><i>*Importante: </i>Llevar el documento el día de su viaje</p>
-                            </div>
-
-                            <!-- </div>
-                            </div> -->
-                            <!-- /.box-body -->
-                            <!-- end list-content -->
+                    <div class="col-sm-12">
+                        <div class="page-heading">
+                            <h2>Busca tu viaje</h2>
+                            <p>Ingresa datos del viaje</p>
+                            <hr class="heading-line" />
                         </div>
-                        <div class="view-all text-center"><a href="./index.html" class="btn btn-orange">Ir al inicio</a></div>
-                        <!-- end f-list-block -->
                     </div>
-                    <!-- FIN -->
+                    <!-- end columns -->
+                    <div class="col-sm-12">
+                        <div class="flex-content">
+                            <div class="custom-form custom-form-fields">
+                                <h3>Ingresa tus datos aquí</h3>
+                                <!-- <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p> -->
+                                <form class="form-covid" action="validar-existencia-viaje.php" method="POST">
+                                    <div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                            <input type="text" class="form-control-dates" placeholder="DNI" name="dni-changes" required/>
+                                            <span>
+                                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                            <input type="text" class="form-control-dates" placeholder="Código de reserva" name="cod-reserva-changes" required/>
+                                            <span>
+                                                <i class="fa fa-ticket" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info-changes">
+                                        <p>Ingresa estos datos tal cual están en <strong>tu boleto</strong></p>
+                                    </div>
+                                    <input type="submit" name="validar-pasaje" value="Siguiente" class="btn-orange-next">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 back-button-changes">
+                                        <a href="./faq.html"><input type="button" class="btn-orange-back" value="Volver"></a>
+                                    </div>
+                            
+                                </form>
+                            </div>
+                            <!-- end custom-form -->
+                        </div>
+                        <!-- end form-content -->
+                    </div>
                     <!-- end columns -->
                 </div>
                 <!-- end row -->
             </div>
             <!-- end container -->
         </div>
-        <!-- end flight-listings -->
+        <!-- end forgot-password -->
     </section>
     <!-- end innerpage-wrapper -->
 
-    <!--================ FORMAS DE PAGO ==============-->
+
+
     <section id="latest-blog" class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-sm-12">
+                <div class="col-sm-12">
                     <div class="page-heading">
                         <h2>Métodos de pago</h2>
                         <hr class="heading-line" />
                     </div>
-
                     <div class="list-container">
                         <div class="list__item">
                             <div class="list__item__img">
@@ -261,20 +275,14 @@
                             <div class="list__item__img">
                                 <img src="./images/payment-4.png" alt="master-card">
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
+    <!--======================= FOOTER =======================-->
     <section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
         <div id="footer-top" class="banner-padding ftr-top-grey ftr-text-white">
             <div class="container">
@@ -317,8 +325,6 @@
                         <ul class="social-links list-inline list-unstyled">
                             <li><a href="#"><span><i class="fa fa-facebook"></i></span></a></li>
                             <li><a href="#"><span><i class="fa fa-twitter"></i></span></a></li>
-                            <!-- <li><a href="#"><span><i class="fa fa-google-plus"></i></span></a></li> -->
-                            <!-- <li><a href="#"><span><i class="fa fa-pinterest-p"></i></span></a></li> -->
                             <li><a href="#"><span><i class="fa fa-instagram"></i></span></a></li>
                             <li><a href="#"><span><i class="fa fa-linkedin"></i></span></a></li>
                             <li><a href="#"><span><i class="fa fa-youtube-play"></i></span></a></li>
@@ -347,10 +353,8 @@
     <!-- end footer -->
     <!-- Page Scripts Starts -->
     <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom-navigation.js"></script>
-    <script src="js/custom-price-slider.js"></script>
     <!-- Page Scripts Ends -->
 </body>
 
