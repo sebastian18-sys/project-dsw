@@ -69,7 +69,7 @@ include("./base_datos/db.php");
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.html" class="covid-button"><span>
+                    <a href="./covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
@@ -242,7 +242,7 @@ include("./base_datos/db.php");
                         </ul>
                     </li> -->
                     <!-- <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li> -->
-                    <li><a href="./covid-19.html" class="search-button"><span>
+                    <li><a href="./covid-19.php" class="search-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>

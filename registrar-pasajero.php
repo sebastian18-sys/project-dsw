@@ -19,12 +19,20 @@ include("base_datos/db.php");
             $email = $_POST['correo'.$d];
 
             $asiento = $_SESSION['asiento'.$d];
-            $id = $_SESSION['id-boleto'];
+            $id_itinerario = $_SESSION['id-boleto'];
             $fecha = $_SESSION['ciudad-fech'];
             $precio = $_SESSION['ciudad-precio'];
 
+            $CB_0 = substr($id_itinerario,0,1);
+            $CB_4 = $asiento;
+            $CB_1 = substr($dni, 0, 2);  // devuelve "abcde"
+            $CB_2 = substr($fecha, -2);
+            $CB_3 = strtoupper(substr($lastname, 0, 2));
 
-            $query = "INSERT INTO boletos VALUES (null, $id, $asiento, '$firstname  ', '$fecha', '$precio')";
+            $codigo_boleto = $CB_0.$CB_4.$CB_1.$CB_2.$CB_3;
+
+            $query = "INSERT INTO boletos VALUES (
+                '$codigo_boleto', $id_itinerario, $asiento, '$fecha','$firstname','$lastname','$email','$dni' , $precio,null)";
             $result = mysqli_query($link, $query);  //Query
 
 

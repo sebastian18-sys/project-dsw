@@ -26,9 +26,6 @@ if(isset($_GET['id']) && isset($_GET['as'])){
         $_SESSION['ciudad-precio'] = $row['precio'];
 
     }
-
-
-
 ?>
 
 <!doctype html>

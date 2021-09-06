@@ -66,13 +66,6 @@ if(isset($_POST['pasaje-bus'])) {
         "as31"=>"vacio",
         "as35"=>"vacio",
         ),
-        "filamid" => array(
-        "tv",
-        "tv",
-        "tv",
-        "tv",
-        ),
-
         "fila3"=>array(
         "as02"=>"vacio",
         "as06"=>"vacio",
@@ -98,7 +91,7 @@ if(isset($_POST['pasaje-bus'])) {
     );
 
     //Creamos la consulta SQL para los datos de las corridas y los asientos desocupados.
-	$consulta="SELECT id_boleto,asiento from boletos where id_boleto=$seleccionado";
+	$consulta="SELECT id_itinerario, asiento from boletos where id_itinerario = $seleccionado";
 	$tabla = mysqli_query($link, $consulta);
 	$asientosOcupados=mysqli_num_rows($tabla);
 	if($asientosOcupados >= 0 && $asientosOcupados < 36) {
@@ -431,25 +424,24 @@ if(isset($_POST['pasaje-bus'])) {
                                         </select>
                                         <br />
                                         <table id="carrito" cellspacing="0" cellpadding="0">
-                                            <!-- asiento 4, 8, 12,.....  -->
                                             <tr>
                                                 <td rowspan="5">
-                                                <img src="./images/asientos2/bus_top.png"/>
+                                                <img src="./images/asientos/bus_top.gif"/>
                                                 </td>
                                                 <td>
                                                 <?php
-                                                $fila1=$asientos['fila1'];  
+                                                $fila1=$asientos['fila1'];
                                                 foreach( $fila1 as $asiento => $estado )
                                                 // echo $asiento;
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\"/>";
+                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\"/>";
                                                         // echo "<input type=\"image\" src=\"./images/asientos/$estado.gif\" id=\"$asiento\"/>";
                                                         
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                         // echo "<input type=\"image\" multiple src=\"./images/asientos/$asiento.jpg\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                         // echo "<input type=\"url\" src=\"./images/asientos/$asiento.jpg\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
@@ -457,11 +449,9 @@ if(isset($_POST['pasaje-bus'])) {
                                                 ?>
                                                 </td>
                                                 <td rowspan="5">
-                                                <img src="./images/asientos2/bus_back.png" />
+                                                <img src="./images/asientos/bus_back.gif" />
                                                 </td>
                                             </tr>
-
-                                            <!-- asiento 3, 7, 11,.....  -->
                                             <tr>
                                                 <td>
                                                 <?php
@@ -471,27 +461,15 @@ if(isset($_POST['pasaje-bus'])) {
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\" />";
+                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\" />";
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
                                                 }
                                                 ?>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="fila-tv">
-                                                <?php 
-                                                $filamid = $asientos['filamid'];
-                                                foreach($filamid as $asiento => $estado){
-                                                    echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\" />";
-                                                }
-                                                ?>
-                                                </td>
-                                            </tr>
-
-                                            <!-- asiento 2, 6, 10,.....  -->
                                             <tr>
                                                 <td>
                                                 <?php
@@ -500,17 +478,15 @@ if(isset($_POST['pasaje-bus'])) {
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\"/>";
+                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\"/>";
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
                                                 }
                                                 ?>
                                                 </td>
                                             </tr>
-
-                                            <!-- asiento 1, 5, 9,.....  -->
                                             <tr>
                                                 <td>
                                                 <?php
@@ -519,10 +495,10 @@ if(isset($_POST['pasaje-bus'])) {
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\" />";
+                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\" />";
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
                                                 }
                                                 ?>
@@ -532,7 +508,7 @@ if(isset($_POST['pasaje-bus'])) {
                                         <br />
                                         <div id="ind">
                                             <table id="indicaciones" cellpadding="0" cellspacing="0">
-                                            <tr><td><img src="./images/asientos2/ocupado.png">&nbsp;<label class="enfasis"><?php echo "OCUPADO";?></label>&nbsp;</label><img src="./images/asientos2/asientoNormal.png">&nbsp;<label class="enfasis"><?php echo "DISPONIBLE";?>&nbsp;<img src="./images/asientos2/seleccionado.png">&nbsp;<label class="enfasis"><?php echo "SELECCIONADO";?></label></tr>
+                                            <tr><td><img src="./images/asientos/ocupado.gif">&nbsp;<label class="enfasis"><?php echo "OCUPADO";?></label>&nbsp;</label><img src="./images/asientos/asientoNormal.gif">&nbsp;<label class="enfasis"><?php echo "DISPONIBLE";?>&nbsp;<img src="./images/asientos/seleccionado.gif">&nbsp;<label class="enfasis"><?php echo "SELECCIONADO";?></label></tr>
                                             </table>
                                         </div>
                                         </div>
