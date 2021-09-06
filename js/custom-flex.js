@@ -1,0 +1,1 @@
+(function(a){var c=a(window),d=a("body"),b=a(".flexslider");c.on("load",function(){b.flexslider({animation:"slide",start:function(e){d.removeClass("loading")},flexDirectionNav:false,controlNav:false,})})})(jQuery);

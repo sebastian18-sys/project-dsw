@@ -1,0 +1,1 @@
+(function(a){var b=a(document),c=a(".popup-youtube");b.on("ready",function(){c.magnificPopup({disableOn:700,type:"iframe",mainClass:"mfp-fade",removalDelay:160,preloader:false,fixedContentPos:false})})})(jQuery);
