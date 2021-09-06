@@ -257,7 +257,7 @@ include("base_datos/db.php");
                                             </div>
                                             <div class="container-dates">
                                                 <div class="container-dates__form-covid col-lg-8">
-                                                    <form action="">
+                                                    <form action="registrar-devolucion.php" method="POST">
                                                         <div class="form-head col-lg-12">
                                                             <h4>Datos del pasajero pasa su devolución</h4>
                                                             <hr>
@@ -267,7 +267,7 @@ include("base_datos/db.php");
                                                                 <label>DNI:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-id-card" aria-hidden="true"></i>
-                                                                    <input type="text" class="form-control-dates" placeholder="DNI" name="dni-covid" readonly="readonly" required="required" value="<?php echo $dni ?>" />
+                                                                    <input type="text" class="form-control-dates" placeholder="DNI" name="dni-dev" readonly="readonly" required="required" value="<?php echo $dni ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -276,7 +276,7 @@ include("base_datos/db.php");
                                                                 <label>Nombres:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                                                    <input type="text" class="form-control-dates" placeholder="Nombres" name="nombres-covid" readonly="readonly" required="required" value="<?php echo $nombre ?>" />
+                                                                    <input type="text" class="form-control-dates" placeholder="Nombres" name="nombres-dev" readonly="readonly" required="required" value="<?php echo $nombre ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -285,7 +285,7 @@ include("base_datos/db.php");
                                                                 <label>Apellidos:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                                                    <input type="text" class="form-control-dates" placeholder="Apellidos" name="apellidos-covid" readonly="readonly" required="required" value="<?php echo $apellidos ?>" />
+                                                                    <input type="text" class="form-control-dates" placeholder="Apellidos" name="apellidos-dev" readonly="readonly" required="required" value="<?php echo $apellidos ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -294,7 +294,7 @@ include("base_datos/db.php");
                                                                 <label>Correo:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                                    <input type="email" class="form-control-dates" placeholder="Correo" name="correo-covid" required="required" value="<?php echo $correo ?>" />
+                                                                    <input type="email" class="form-control-dates" placeholder="Correo" name="correo-dev" required="required" value="<?php echo $correo ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -303,7 +303,7 @@ include("base_datos/db.php");
                                                                 <label>Dirección:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-home" aria-hidden="true"></i>
-                                                                    <input type="email" class="form-control-dates" placeholder="Dirección" name="address-covid" required="required" />
+                                                                    <input type="email" class="form-control-dates" placeholder="Dirección" name="address-dev" required="required" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -312,7 +312,7 @@ include("base_datos/db.php");
                                                                 <label>Telefono:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-phone" aria-hidden="true"></i>
-                                                                    <input type="text" class="form-control-dates" placeholder="Telefono" name="telefono-covid" required="required" />
+                                                                    <input type="text" class="form-control-dates" placeholder="Telefono" name="telefono-dev" required="required" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -320,7 +320,7 @@ include("base_datos/db.php");
 
 
                                                         <div class="button-container col-sm-12">
-                                                            <Input class="next-button" name="Registrar_Formulario" Type="submit" value="Enviar">
+                                                            <Input class="next-button" name="Registrar_Devolucion" Type="submit" value="Enviar">
                                                             <a href="./covid-19.php"> <input class="back-button" type="button" value="Cancelar"> </a>
                                                         </div>
                                                     </form>
