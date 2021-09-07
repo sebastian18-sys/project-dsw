@@ -55,7 +55,7 @@ include("../base_datos/db.php");
         <!-- end overlay-content -->
     </div>
     <!-- end overlay -->
-
+    
     <nav class="navbar navbar-default main-navbar navbar-custom navbar-white" id="mynavbar-1">
         <div class="container">
             <div class="navbar-header">
@@ -69,7 +69,7 @@ include("../base_datos/db.php");
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.php" class="covid-button"><span>
+                    <a href="../covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
@@ -84,7 +84,7 @@ include("../base_datos/db.php");
             <!-- end navbar-header -->
             <div class="collapse navbar-collapse" id="myNavbar1">
                 <ul class="nav navbar-nav navbar-right navbar-search-link">
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="../index.php" class="dropdown-toggle">Inicio
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
@@ -116,14 +116,14 @@ include("../base_datos/db.php");
                             <li><a href="flight-detail-right-sidebar.html">Detail Right Sidebar</a></li>
                         </ul> -->
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios
                             <span>
                                 <i class="fa fa-angle-down"></i>
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="encomiendas/encomiendas.php">Encomiendas</a></li>
+                            <li class="active"><a href="encomiendas/encomiendas.php">Encomiendas</a></li>
                             <li><a href="hotel-listing-left-sidebar.html">Mudanzas</a></li>
                             <!-- <li><a href="hotel-listing-right-sidebar.html">List View Right Sidebar</a></li>
                             <li><a href="hotel-grid-left-sidebar.html">Grid View Left Sidebar</a></li>
@@ -307,40 +307,104 @@ include("../base_datos/db.php");
     <!-- end sidenav-content -->
 
 
-
-
-
-
-
-
-
-
-
-    <!--========================= BOTONES DE LOS TIPOS DE ENCOMIENDAS =====================-->
-    <section class="flexslider-container" id="flexslider-container-1">
-        <div class="flexslider slider" id="slider-1">
-            <ul class="slides">
-                <li class="item-1" style="background-color: black;background-position: center; background-size:cover;	height:100%;">
-                    <div class=" meta">
-                        <div class="container">
-
-                        <form method="POST" action="documentos.php">
-                            <button  style="color: red;padding: 20px;" type="submit">Documentos</button>
-                        </form>
-
-                        <form method="POST" action="paquetes.php">
-                            <button  style="color: red;padding: 20px;" type="submit">Paquetes</button>
-                        </form>
-                            
-                        </div>
-                        <!-- end container -->
-                    </div>
-                    <!-- end meta -->
-                </li>
-                
-            </ul>
+    <!--================== PAGE-COVER ==================-->
+    <section class="page-cover" id="cover-forgot-encomiendas">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="page-title">Cargo de postal encomiendas y paqueterias</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li class="active">Servicios / Encomiendas</li>
+                    </ul>
+                </div>
+                <!-- end columns -->
+            </div>
+            <!-- end row -->
         </div>
+        <!-- end container -->
+    </section>
+    <!-- end page-cover -->
+    <!--===== INNERPAGE-WRAPPER ====-->
 
+
+    <section class="innerpage-wrapper">
+        <div id="flight-listings" class="innerpage-section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <!-- end columns -->
+                    <div id="boleto" class="col-xs-12 col-sm-12 col-md-12 content-side">
+                        <div class="list-block main-block f-list-block">
+                            <!-- <div class="container">
+                                <div class="row"> -->
+                            <div class="container-head">
+                                <h2>Acerca del Servicio</h2>
+                            </div>
+                            <div class="container-encomiendas">
+                                <!-- <div class="text-datos">
+                                    <h3>Hola,&nbsp; </h3>
+                                    <h3>gracias por tu pago</h3>
+                                </div> -->
+                                <div class="container-encomiendas__text"> 
+                                    <h4>WIÑAYMARCA CARGO, brinda un servicio integral de transporte de carga, brindando un servicio de calidad
+                                    con valor agregado ya que contamos con buses equipados para que la carga llegue a su destino en  perfectas condiciones.
+                                    Y pensando en  nuestros clientes les ofrecemos los siguientes beneficios: </h4>
+                                </div>
+                                <div class="container-encomiendas__text"> 
+                                    <h5>
+                                    •Contará con un Ejecutivo de Cuenta, responsable de brindarle soporte y manejo operativo. <br>
+                                    •Vehículos debidamente acondicionados para el transporte de carga. <br>
+                                    •Amplios y modernos locales. </h5>
+                                </div>
+                                <div class="container-encomiendas__text"> 
+                                    <h4>
+                                    Nuestras unidades están equipadas con sistema de seguimiento satelital, que nos permite trazear su ubicación a tiempo real, permitiendo controlar la puntualidad en la entrega de sus envíos.</h4>
+                                </div>
+                                <div class="container-option-encomienda">
+                                    <h3>Cotiza y compara el mejor precio.</h3>
+                                    <h4>Selecciona tu tipo de envío.</h4>
+                                    <div class="container-tipo">
+                                        <div class="container-tipo__documentos">
+                                            <i class="fa fa-file" aria-hidden="true"></i>
+                                            <p>Documentos</p>
+                                            <form method="POST" action="documentos.php">
+                                                <button class="btn btn-orange" type="submit">Seleccionar</button>
+                                            </form>
+                                        </div>
+                                        <div class="container-tipo__paquetes">
+                                            <i class="fa fa-inbox" aria-hidden="true"></i>
+                                            <p>Paquetes</p>
+                                            <form method="POST" action="paquetes.php">
+                                                <button class="btn btn-orange" type="submit">Seleccionar</button>
+                                            </form>
+                                        </div>
+
+                                    </div>  
+                                </div>
+                                <div class="container-encomiendas__text"> 
+                                    <h4>En cuanto a precios, las mejores paqueterías y encomiendas estpan en Wiñaymarca Encomienda, con su servicio Estándar cuyo precio es de S/. 12,50.</h4>
+                                    <h4>El precio aumentará dependiendo del peso del paquete y el destino.</h4>
+                                </div>
+                            </div>
+
+                            <!-- </div>
+                            </div> -->
+                            <!-- /.box-body -->
+                            <!-- end list-content -->
+                        </div>
+                        <!-- end f-list-block -->
+                    </div>
+                    <!-- FIN -->
+                    <!-- end columns -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end flight-listings -->
+    </section>
+    <!-- end innerpage-wrapper -->
 
     <!--================ FORMAS DE PAGO ==============-->
     <section id="latest-blog" class="section-padding">

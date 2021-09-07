@@ -4845,11 +4845,36 @@ h6,
     padding: 40px 10px;
 }
 
+.container-option-encomienda,
 .container-monto {
     text-align: center;
     background: #fff;
     margin: 30px 100px 30px 100px;
     padding: 30px 105px;
+}
+
+.container-option-encomienda h3 {
+    color: #faa61a;
+    margin: 0 0 20px 0;
+}
+
+.container-tipo {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+.container-tipo__paquetes i,
+.container-tipo__documentos i {
+    font-size: 120px;
+    color: #faa61a;
+    margin: 20px 0;
+}
+
+.container-tipo__paquetes p,
+.container-tipo__documentos p {
+    font-size: 20px;
+    margin: 0 0 20px 0;
 }
 
 .text-datos {
@@ -5020,6 +5045,23 @@ h6,
     text-align: center;
     padding: 40px 0;
     background-color: #efeff0;
+}
+
+.container-encomiendas {
+    /* text-align: center; */
+    padding: 40px 0;
+    background-color: #efeff0;
+    /* margin: 0 100px; */
+}
+
+.container-encomiendas__text {
+    padding: 0 100px;
+}
+
+.container-encomiendas__text h5,
+.container-encomiendas__text h4 {
+    margin: 10px 0;
+    line-height: 30px;
 }
 
 .checkbox-flex {

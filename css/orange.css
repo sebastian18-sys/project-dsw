@@ -1895,6 +1895,17 @@ p {
 }
 
 
+/****** ENCOMIENDAS PAGE ******/
+
+#cover-forgot-encomiendas {
+    background: url('../images/Head/header1.jpg') 50% 32%;
+    /* background-size: 140%; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
 /********** BEFORE YOU FLY PAGE *********/
 
 #cover-byf-info {
