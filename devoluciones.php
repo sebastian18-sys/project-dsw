@@ -249,7 +249,7 @@ include("base_datos/db.php");
                                                             <label>Mensaje:</label>
                                                             <div class="group">
                                                                 <i class="fa fa-id-card" aria-hidden="true"></i>
-                                                                <textarea name="text-motivo" id="" class="form-control-dates" cols="30" rows="10"></textarea>
+                                                                <textarea   cols="30" rows="12" name="text-motivo" class="form-control-dates"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>

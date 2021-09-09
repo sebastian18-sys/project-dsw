@@ -12,6 +12,7 @@ include("base_datos/db.php");
         $correo = $_POST['correo-dev']; 
         $direccion = $_POST['address-dev']; 
         $telefono = $_POST['telefono-dev']; 
+        $motivo = $_POST['text-motivo'];
         
         // $_SESSION['boleto-covid'] = $boleto;
         $boleto =  $_SESSION['boleto-changes'];
@@ -19,7 +20,8 @@ include("base_datos/db.php");
         $_SESSION['cod-boleto-dev'] = $boleto;
         $_SESSION['email-dev'] = $correo;
 
-        $query = "DELETE FROM boletos WHERE codigo_boleto = '$boleto'";
+        $query = "UPDATE boletos SET `estado` = '0' WHERE (`codigo_boleto` = '$boleto');";
+       
         $result = mysqli_query($link, $query);
 
         if($result) {
