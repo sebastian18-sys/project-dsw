@@ -88,15 +88,15 @@ include("../base_datos/db.php");
                         </span>
                     </a>
                 </div>
-                <a href="#" class="navbar-brand">
-                    <span><i class="fa fa-plane"></i>WIÑAY</span>MARCA
+                <a href="../index.php" class="navbar-brand">
+                    <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
             <!-- end navbar-header -->
             <div class="collapse navbar-collapse" id="myNavbar1">
                 <ul class="nav navbar-nav navbar-right navbar-search-link">
                     <li class="dropdown">
-                        <a href="./index.html" class="dropdown-toggle">Inicio
+                        <a href="../index.php" class="dropdown-toggle">Inicio
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
@@ -116,15 +116,14 @@ include("../base_datos/db.php");
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="hotel-homepage.html">Encomiendas</a></li>
-                            <li><a href="hotel-listing-left-sidebar.html">Mudanzas</a></li>
+                            <li><a href="../encomiendas/encomiendas.php">Encomiendas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
+                            <li><a href="../destinations.html">Destinos</a></li>
+                            <li><a href="../rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown active">
@@ -135,7 +134,7 @@ include("../base_datos/db.php");
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="../contact-us.html" class="dropdown-toggle">Contacto
+                        <a href="../contact-us.php" class="dropdown-toggle">Contacto
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
@@ -154,7 +153,7 @@ include("../base_datos/db.php");
     <div class="sidenav-content">
         <div id="mySidenav" class="sidenav">
             <h2 id="web-name">
-                <span><i class="fa fa-plane"></i></span>Wiñaymarca
+                <span><i class="fa fa-bus"></i></span>Wiñaymarca
             </h2>
             <div id="main-menu">
                 <div class="closebtn">
@@ -174,8 +173,7 @@ include("../base_datos/db.php");
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="" class="list-group-item">Encomiendas</a>
-                        <a href="" class="list-group-item">Mudanzas</a>
+                        <a href="../encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
                     </div>
 
                     <a href="#tours-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
@@ -184,7 +182,7 @@ include("../base_datos/db.php");
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
                         <a href="../destinations.html" class="list-group-item">Destinos</a>
-                        <a href="tour-listing-left-sidebar.html" class="list-group-item">Rutas</a>
+                        <a href="../rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
                     <a href="../faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
@@ -206,7 +204,7 @@ include("../base_datos/db.php");
                 <div class="col-sm-12">
                     <h1 class="page-title">Devoluciones</h1>
                     <ul class="breadcrumb">
-                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="../index.php">Inicio</a></li>
                         <li class="active">Ayuda</li>
                     </ul>
                 </div>

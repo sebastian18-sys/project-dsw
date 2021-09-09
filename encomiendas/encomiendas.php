@@ -10,7 +10,7 @@ include("../base_datos/db.php");
     <title>Encomiendas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/icon-web.png" />
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
