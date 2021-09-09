@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include("../base_datos/db.php");
 
     $id_boleto = $_SESSION['boleto-changes'];

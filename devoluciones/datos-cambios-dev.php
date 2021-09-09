@@ -1,3 +1,12 @@
+<?php
+// session_start(); 
+// session_destroy();
+
+// include("../base_datos/db.php");
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
