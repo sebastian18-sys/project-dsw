@@ -10,6 +10,8 @@ include("../base_datos/db.php");
     <title>Encomienda - Documento</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <link rel="icon" href="../images/favicon.png" type="image/x-icon">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -34,7 +36,7 @@ include("../base_datos/db.php");
 
 <body id="main-homepage">
 
-<!--====== LOADER =====-->
+    <!--====== LOADER =====-->
     <div class="loader"></div>
 
     <nav class="navbar navbar-default main-navbar navbar-custom navbar-white" id="mynavbar-1">
@@ -51,9 +53,9 @@ include("../base_datos/db.php");
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
                     <a href="../covid-19.php" class="covid-button"><span>
-                        <!-- <i class="fa fa-search"></i> -->
-                        Covid-19
-                    </span>
+                            <!-- <i class="fa fa-search"></i> -->
+                            Covid-19
+                        </span>
                     </a>
                 </div>
                 <!-- cCAMBIOS -->
@@ -113,8 +115,7 @@ include("../base_datos/db.php");
                             <li><a href="hotel-detail-right-sidebar.html">Detail Right Sidebar</a></li> -->
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i
-                                    class="fa fa-angle-down"></i></span></a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./destinations.html">Destinos</a></li>
                             <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
@@ -224,10 +225,10 @@ include("../base_datos/db.php");
                     </li> -->
                     <!-- <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li> -->
                     <li><a href="../covid-19.php" class="search-button"><span>
-                        <!-- <i class="fa fa-search"></i> -->
-                        Covid-19
-                    </span>
-                    </a></li>
+                                <!-- <i class="fa fa-search"></i> -->
+                                Covid-19
+                            </span>
+                        </a></li>
                 </ul>
             </div>
             <!-- end navbar collapse -->
@@ -307,222 +308,181 @@ include("../base_datos/db.php");
     <!-- end page-cover -->
     <!--===== INNERPAGE-WRAPPER ====-->
     <section class="innerpage-wrapper">
-    <div class="tab-content">
-            <div id="flights" class="tab-pane in active">
-                <div class="container">
+        <div id="flight-listings" class="innerpage-section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <!-- end columns -->
+                    <!-- <div class="col-xs-12 col-sm-12 col-md-12 content-side">
+                        <h2></h2>
+                        <p>Fecha: </p>
+                        <div class="page-search">
+                            <h4>Ingresa tus <strong>datos</strong></h4>
+                            <hr class="heading-line" />
+                        </div>
+                    </div> -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 content-side">
+                        <div class="list-block main-block f-list-block">
+                            <!-- <div class="container">
+                                <div class="row"> -->
+                            <form action="validar-encomienda.php" method="POST">
                 
-                    <div class="row">
-                    <form method="POST" action="validar-encomienda.php">
-                        <div class="custom-form custom-form-fields">
-                            <h3>Dónde quieres mandar tu paquete</h3>
-                            <!-- <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p> -->
-                            
-                                
-                                <div class="col-xs-12 col-sm-6 col-md-6">
-                                        <!-- <label for="">¿Dónde estás?</label> -->
-                                    <div class="form-group left-icon">
-                                        <!-- <input type="text" class="form-control" placeholder="Origen"> -->
-                                        <?php
-                                        //Creamos la consulta SQL
-                                        $tabla = mysqli_query($link, "SELECT DISTINCT ciudad FROM agencias ORDER BY ciudad");        
-                                        ?>
-                                        <select name="origen_encomienda" class="form-control" id="origen">
-                                            <option value="-1">Origen</option>
-                                            <?php
-                                            //recorremos la tabla en busca de los registros
-                                                while ($registro = mysqli_fetch_array($tabla)) { 
-                                            ?>
-                                            <option value="<?php echo $registro[0]; //a�adimos el registro ?>"><?php echo $registro[0]; //a�adimos el registro?></option>
-                                            <?php
-                                                } 
-                                                //liberamos la tabla del bloqueo..
-                                                mysqli_free_result($tabla);
-                                            ?>
-                                        </select>
-                                        <i class="fa fa-map-marker"></i>
+                                        
+                                <div class="container-dates">
+                                    <div class="container-dates__form col-lg-8">
+                                        
+                                            <div class="form-head col-lg-12">
+                                                <h4>Donde quieres mandar tu paquete</h4>
+                                                <hr>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Desde:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-map-marker"></i>
+                                                        <?php
+                                                        //Creamos la consulta SQL
+                                                        $tabla = mysqli_query($link, "SELECT DISTINCT ciudad FROM agencias ORDER BY ciudad");
+
+                                                        ?>
+                                                        <select name="origen_encomienda" class="form-control-dates" id="origen">
+                                                            <option value="-1">Origen</option>
+                                                            <?php
+                                                            //recorremos la tabla en busca de los registros
+                                                            while ($registro = mysqli_fetch_array($tabla)) {
+                                                            ?>
+                                                                <option value="<?php echo $registro[0]; //a�adimos el registro 
+                                                                                ?>"><?php echo $registro[0]; //a�adimos el registro
+                                                                                                                                    ?></option>
+                                                            <?php
+                                                            }
+                                                            //liberamos la tabla del bloqueo..
+                                                            mysqli_free_result($tabla);
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Hasta:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-map-marker"></i>
+                                                        <?php
+                                                        //Creamos la consulta SQL
+                                                        $tabla = mysqli_query($link, "select distinct ciudad from agencias order by ciudad");
+                                                        ?>
+                                                        <select name="destino_encomienda" class="form-control-dates" id="destino">
+                                                            <option value="-1">Destino</option>
+                                                            <?php
+                                                            //recorremos los registros
+                                                            while ($registro = mysqli_fetch_array($tabla)) {
+                                                            ?>
+                                                                <option value="<?php echo $registro[0]; //a�adimos el valor
+                                                                                ?>"><?php echo $registro[0]; //a�adimos el valor
+                                                                                                                                ?></option>
+                                                            <?php
+                                                            }
+                                                            //liberamos la tabla...
+                                                            mysqli_free_result($tabla);
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">    
+                                                    <label>Fecha:</label>
+                                                    <div class="group">
+                                                    <i class="fa fa-calendar"></i>
+                                                        <input type="text" autocomplete="off" class="form-control-dates dpd1" name="fecha_encomienda" placeholder="Fecha">
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
                                     </div>
-                                </div>
-              
-                                <div class="col-xs-12 col-sm-6 col-md-6">
-                                    <!-- <label for="">¿A donde vas?</label> -->
-                                    <div class="form-group left-icon">
-                                        <?php
-                                            //Creamos la consulta SQL
-                                            $tabla = mysqli_query($link, "select distinct ciudad from agencias order by ciudad"); 
-                                        ?>
-                                        <select name="destino_encomienda" class="form-control" id="destino">
-                                            <option value="-1">Destino</option>
-                                            <?php
-                                            //recorremos los registros
-                                                while ($registro = mysqli_fetch_array($tabla)) { 
-                                            ?>
-                                            <option value="<?php echo $registro[0]; //a�adimos el valor?>"><?php echo $registro[0]; //a�adimos el valor?></option>
-                                            <?php
-                                                } 
-                                                //liberamos la tabla...
-                                                mysqli_free_result($tabla);
-                                            ?>
-                                        </select>
-                                        <i class="fa fa-map-marker"></i>
-                                    </div>
-                                </div>
-                                <!-- end columns -->
                                     
-                         
-                        </div>
-                    </form>
-                    </div>
-                
-            </div>
-                    
+                                </div>
 
-                <form method="POST" action="validar-encomienda.php">
-                    <h4>Donde quieres mandar tu paquete</h4>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-md-6">
-                                    <!-- <label for="">¿Dónde estás?</label> -->
-                                    <div class="form-group left-icon">
-                                        <!-- <input type="text" class="form-control" placeholder="Origen"> -->
-                                        <?php
-                                        //Creamos la consulta SQL
-                                        $tabla = mysqli_query($link, "SELECT DISTINCT ciudad FROM agencias ORDER BY ciudad"); 
+                                <div class="container-dates">
+                                    <div class="container-dates__form col-lg-8">
+                                        
+                                            <div class="form-head col-lg-12">
+                                                <h4>Precio</h4>
+                                                <hr>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Desde:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-map-marker"></i>
+                                                        <select id="pesoPaquete" name="peso-paquete" class="form-control-dates">
+                                                            <option disabled value="-1">Peso</option>
+                                                            
+                                                            <option value="Menos de 5kg">Menos de 5kg</option>
+                                                            <option value="Menos de 10kg">Menos de 10kg</option>
+                                                            <option value="Menos de 20kg">Menos de 20kg</option>
+                                                            <option value="Más de 20kg">Más de 20kg</option>
+                                                          
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Desde:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-map-marker"></i>
+                                                        <input id="pesoSeleccionado" type="text" name="precio-encomienda" class="form-control-dates" placeholder="Precio">
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
-                                        ?>
-                                        <select name="origen_encomienda" class="form-control" id="origen">
-                                            <option value="-1">Origen</option>
-                                            <?php
-                                            //recorremos la tabla en busca de los registros
-                                                while ($registro = mysqli_fetch_array($tabla)) { 
-                                            ?>
-                                            <option value="<?php echo $registro[0]; //a�adimos el registro ?>"><?php echo $registro[0]; //a�adimos el registro?></option>
-                                            <?php
-                                                } 
-                                                //liberamos la tabla del bloqueo..
-                                                mysqli_free_result($tabla);
-                                            ?>
-                                        </select>
-                                        <i class="fa fa-map-marker"></i>
+                    
                                     </div>
+                                    
                                 </div>
-                                <!-- end columns -->
-                                <div class="col-xs-12 col-sm-6 col-md-6">
-                                    <!-- <label for="">¿A donde vas?</label> -->
-                                    <div class="form-group left-icon">
-                                        <?php
-                                            //Creamos la consulta SQL
-                                            $tabla = mysqli_query($link, "select distinct ciudad from agencias order by ciudad"); 
-                                        ?>
-                                        <select name="destino_encomienda" class="form-control" id="destino">
-                                            <option value="-1">Destino</option>
-                                            <?php
-                                            //recorremos los registros
-                                                while ($registro = mysqli_fetch_array($tabla)) { 
-                                            ?>
-                                            <option value="<?php echo $registro[0]; //a�adimos el valor?>"><?php echo $registro[0]; //a�adimos el valor?></option>
-                                            <?php
-                                                } 
-                                                //liberamos la tabla...
-                                                mysqli_free_result($tabla);
-                                            ?>
-                                        </select>
-                                        <i class="fa fa-map-marker"></i>
-                                    </div>
-                                </div>
-                                <!-- end columns -->
-                            </div>
-                            <!-- end row -->
-                        </div>
-                        <!-- end columns -->
-                        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <!-- <label for="">¿Cuándo viajaras?</label> -->
-                                    <div class="form-group left-icon">
-                                        <input type="text" autocomplete="off" class="form-control dpd1" name="fecha_encomienda" placeholder="Fecha"><i class="fa fa-calendar"></i>
-                                    </div>
-                                </div>
-
                                 
-                                <!-- end columns -->
-                            </div>
-                            <!-- end row -->
-                        </div>
 
-                        <!-- end columns -->
-                    </div>
-                    <!-- end row -->
-
-
-
-                    <div>
-                        <h4>Precio</h4>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-md-6">
-                                        <!-- <label for="">¿Dónde estás?</label> -->
-                                        <div class="form-group left-icon">
-
-                                            <input type="text" name = "precio-encomienda" class="form-control" placeholder="Precio"> 
-                                        </div>
-                                                
-                                    </div>
+                                <div class="button-container col-sm-6">
+                                    <a href="#"> <input class="back-button" type="button" value="Regresar"> </a>
+                                    
                                 </div>
-                            </div>    
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4>Datos del destinatario</h4>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-md-6">
-                                        <div class="form-group left-icon">
-                                            <input type="text" name = "nombre-destinatario" class="form-control" placeholder="Nombre"> 
-                                        </div>
-
-                                        <div class="form-group left-icon">
-                                            <input type="text" name = "apellido-destinatario" class="form-control" placeholder="Apellido"> 
-                                        </div>
-
-                                        <div class="form-group left-icon">
-                                            <input type="text" name = "dni-destinatario" class="form-control" placeholder="DNI"> 
-                                        </div>
-
-                                        <div class="form-group left-icon">
-                                            <input type="text" name = "celular-destinatario" class="form-control" placeholder="Celular"> 
-                                        </div>
-
-                                        <div class="form-group ">
-                                            <input type="hidden" name="valor-encomienda" value="paquete">
-                                        </div>               
-                                                
-                                    </div>
+                                <div class="button-container col-sm-6">
+                                    <Input class="next-button" name="Registrar_Pasajero" Type="submit" value="Continuar">
+                                    
                                 </div>
-                            </div>    
+                                
+                                
+                            </form>
                         </div>
-                    </div>
+                        <!-- end f-list-block -->
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 search-btn">
-                        <input type="submit" class="btn btn-orange" name="verificar-encomienda" value="Continuar">
+
+
+                        <!-- <div class="pages">
+                            <ol class="pagination">
+                                <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
+                            </ol>
+                        </div> -->
+                        <!-- end pages -->
                     </div>
-                    
-                    
-                
+                    <!-- FIN -->
+                    <!-- end columns -->
                 </div>
-                </form>
+                <!-- end row -->
             </div>
-            <!-- end flights -->
-            
+            <!-- end container -->
         </div>
-        <!-- end tab-content -->
-    </div>
+        <!-- end flight-listings -->
 
     </section>
-    
+
     <!--================ FORMAS DE PAGO ==============-->
     <section id="latest-blog" class="section-padding">
         <div class="container">
@@ -650,6 +610,7 @@ include("../base_datos/db.php");
     <script src="../js/custom-date-picker.js"></script>
     <script src="../js/custom-video.js"></script>
     <script src="../js/util.js"></script>
+    <script src="../js/precio.js"></script>
     <!-- Page Scripts Ends -->
 </body>
 

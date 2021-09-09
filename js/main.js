@@ -47,3 +47,5 @@ formulario.inputCVV.addEventListener('keyup', (e) => {
         .replace(/\D/g, '')
         .trim();
 })
+
+//Peso
