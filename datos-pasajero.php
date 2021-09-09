@@ -344,7 +344,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                 <?php } $_SESSION['number'] = $i; ?>
 
                                 <div class="button-container col-sm-6">
-                                    <a href="./familia.php"> <input class="back-button" type="button" value="Regresar"> </a>
+                                    <a href="./buscarAsiento.php"> <input class="back-button" type="button" value="Regresar"> </a>
                                     
                                 </div>
                                 <div class="button-container col-sm-6">

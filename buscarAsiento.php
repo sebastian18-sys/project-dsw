@@ -66,6 +66,12 @@ if(isset($_POST['pasaje-bus'])) {
         "as31"=>"vacio",
         "as35"=>"vacio",
         ),
+        "filatele"=>array(
+        "tv"=>"vacio",
+        "tv"=>"vacio",
+        "tv"=>"vacio",
+        "tv"=>"vacio",
+        ),
         "fila3"=>array(
         "as02"=>"vacio",
         "as06"=>"vacio",
@@ -385,9 +391,9 @@ if(isset($_POST['pasaje-bus'])) {
                             <div class="col-xs-12 col-sm-6 col-md-12">
                                 <div class="side-bar-block support-block">
                                     <h3>Necesitas ayuda?</h3>
-                                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum.</p>
+                                    <p>Necesitas ayuda? Si deseas mayor información sobre tu viaje, si tienes dudas sobre los servicios que ofrecemos o deseas realizar una consulta; también puedes comunicarte a nuestra línea de atención al cliente. </p>
                                     <div class="support-contact"><span><i class="fa fa-phone"></i></span>
-                                        <p>+1 123 1234567</p>
+                                        <p>(01) 5891260</p>
                                     </div>
                                     <!-- end support-contact -->
                                 </div>
@@ -407,8 +413,8 @@ if(isset($_POST['pasaje-bus'])) {
                             <hr class="heading-line" />
                         </div>
                         <div class="list-block main-block f-list-block">
-                            <div class="container">
-                                <div class="row">
+                            <!-- <div class="container"> -->
+                                <!-- <div class="row"> -->
                                     <form id="boleto" action="" method="POST">
                                         <label><?php echo "SELECCIONA EL NUMERO DE BOLETOS";?></label>
                                         
@@ -426,7 +432,7 @@ if(isset($_POST['pasaje-bus'])) {
                                         <table id="carrito" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <td rowspan="5">
-                                                <img src="./images/asientos/bus_top.gif"/>
+                                                <img src="./images/asientos2/bus_top.png"/>
                                                 </td>
                                                 <td>
                                                 <?php
@@ -436,12 +442,12 @@ if(isset($_POST['pasaje-bus'])) {
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\"/>";
+                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\"/>";
                                                         // echo "<input type=\"image\" src=\"./images/asientos/$estado.gif\" id=\"$asiento\"/>";
                                                         
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                         // echo "<input type=\"image\" multiple src=\"./images/asientos/$asiento.jpg\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                         // echo "<input type=\"url\" src=\"./images/asientos/$asiento.jpg\" class=\"links\" id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
@@ -449,7 +455,7 @@ if(isset($_POST['pasaje-bus'])) {
                                                 ?>
                                                 </td>
                                                 <td rowspan="5">
-                                                <img src="./images/asientos/bus_back.gif" />
+                                                <img src="./images/asientos2/bus_back.png" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -461,12 +467,28 @@ if(isset($_POST['pasaje-bus'])) {
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\" />";
+                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\" />";
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
                                                 }
+                                                ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fila-tv">
+                                                <?php
+                                                // $filatele=$asientos['filatele'];
+                                                // foreach( $filatele as $tele => $estado )
+                                                // echo $tele; 
+                                                // {
+                                                for($i = 0; $i < 4; $i++) {
+                                                    // if($estado == "vacio") {
+                                                        echo "<img src=\"./images/asientos2/tv.png\" id=\"\" />";   
+                                                    // }
+                                                }
+                                                // }
                                                 ?>
                                                 </td>
                                             </tr>
@@ -478,10 +500,10 @@ if(isset($_POST['pasaje-bus'])) {
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\"/>";
+                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\"/>";
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
                                                 }
                                                 ?>
@@ -495,10 +517,10 @@ if(isset($_POST['pasaje-bus'])) {
                                                 {
                                                     if($estado=="ocupado")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$estado.gif\" id=\"$asiento\" />";
+                                                        echo "<img src=\"./images/asientos2/$estado.png\" id=\"$asiento\" />";
                                                     }else if($estado=="vacio")
                                                     {
-                                                        echo "<img src=\"./images/asientos/$asiento.jpg\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
+                                                        echo "<img src=\"./images/asientos2/$asiento.png\" class=\"links\"  id=\"$asiento\" onclick=\"Util.swapImage(this);\"/>";
                                                     }
                                                 }
                                                 ?>
@@ -506,13 +528,13 @@ if(isset($_POST['pasaje-bus'])) {
                                             </tr>
                                         </table>
                                         <br />
-                                        <div id="ind">
+                                        <div id="ind" class="leyenda-asientos">
                                             <table id="indicaciones" cellpadding="0" cellspacing="0">
-                                            <tr><td><img src="./images/asientos/ocupado.gif">&nbsp;<label class="enfasis"><?php echo "OCUPADO";?></label>&nbsp;</label><img src="./images/asientos/asientoNormal.gif">&nbsp;<label class="enfasis"><?php echo "DISPONIBLE";?>&nbsp;<img src="./images/asientos/seleccionado.gif">&nbsp;<label class="enfasis"><?php echo "SELECCIONADO";?></label></tr>
+                                            <tr><td><img src="./images/asientos2/ocupado.png">&nbsp;<label class="enfasis"><?php echo "OCUPADO";?></label>&nbsp;</label><img src="./images/asientos2/asientoNormal.png">&nbsp;<label class="enfasis"><?php echo "DISPONIBLE";?>&nbsp;<img src="./images/asientos2/seleccionado.png">&nbsp;<label class="enfasis"><?php echo "SELECCIONADO";?></label></tr>
                                             </table>
                                         </div>
-                                        </div>
-                                            <table id="continuar">
+                                    <!-- </div> -->
+                                            <!-- <table id="continuar">
                                                 <tr>
                                                     <td>
                                                         <img src="./images/asientos/regresar.gif" onclick="Util.Regresar();" class="links" />
@@ -527,15 +549,23 @@ if(isset($_POST['pasaje-bus'])) {
                                                         <img src="./images/asientos/continuar.gif" id="continuar" onclick="Util.avanzar();" class="links"/>
                                                     </td>
                                                 </tr>
-                                            </table>
+                                            </table> -->
                                             <input type="hidden" id="num_bol_selec" value="0" />
                                             <input type="hidden" id="bolsMax" value="0" />
                                             <input type="hidden" id="id_corrida" value="<?php echo $seleccionado; ?>" />
-                                        <input type="submit" name="comprar-asiento" class="btn btn-orange" id="" value="Siguiente">
+                                        
+                                        <div class="button-container col-lg-12">
+                                      
+                                            <input type="submit" name="comprar-asiento" id="continuar" onclick="Util.avanzar();" class="btn btn-orange" value="Siguiente">
+                                    
+                                            <a href="./buscar-pasaje.php"> <input class="back-button" type="button" value="Regresar"> </a>
+
+                                            
+                                        </div>
                                         
                                     </form>
-                                </div>
-                            </div>
+                                <!-- </div> -->
+                            <!-- </div> -->
                             
                             <!-- /.box-body -->
                             <!-- end list-content -->

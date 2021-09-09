@@ -5115,3 +5115,8 @@ h6,
 .paquete-container-destino {
     margin: 40px 0;
 }
+
+.leyenda-asientos {
+    /* position: relative; */
+    margin: 40px auto;
+}
