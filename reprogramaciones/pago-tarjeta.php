@@ -312,16 +312,16 @@
                     <div class="list-container">
                         <div class="list__item">
                             <div class="list__item__img">
-                                <img src="./images/payment-1.png" alt="master-card">
+                                <img src="../images/payment-1.png" alt="master-card">
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-2.png" alt="master-card">
+                                <img src="../images/payment-2.png" alt="master-card">
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-3.png" alt="master-card">
+                                <img src="../images/payment-3.png" alt="master-card">
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-4.png" alt="master-card">
+                                <img src="../images/payment-4.png" alt="master-card">
                             </div>
 
                         </div>
