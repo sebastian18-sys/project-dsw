@@ -16,7 +16,7 @@ $date = $_SESSION['NUEVA_FECHA_VIAJE'];
     <title>Buscar pasaje</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -411,8 +411,8 @@ if(isset($_POST['pasaje-bus'])) {
                             <hr class="heading-line" />
                         </div>
                         <div class="list-block main-block f-list-block">
-                            <div class="container">
-                                <div class="row">
+                            <!-- <div class="container"> -->
+                                <!-- <div class="row"> -->
                                     <form id="boleto" action="" method="POST">
                                         <label><?php echo "SELECCIONA EL NUMERO DE BOLETOS";?></label>
                                         
@@ -427,7 +427,7 @@ if(isset($_POST['pasaje-bus'])) {
                                             ?>
                                         </select>
                                         <br />
-                                        <table id="carrito" cellspacing="0" cellpadding="0">
+                                        <table id="carrito" class="carro-container" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <td rowspan="5">
                                                 <img src="../images/asientos2/bus_top.png"/>
@@ -526,13 +526,13 @@ if(isset($_POST['pasaje-bus'])) {
                                             </tr>
                                         </table>
                                         <br />
-                                        <div id="ind">
+                                        <div id="ind" class="leyenda-asientos">
                                             <table id="indicaciones" cellpadding="0" cellspacing="0">
                                             <tr><td><img src="../images/asientos2/ocupado.png">&nbsp;<label class="enfasis"><?php echo "OCUPADO";?></label>&nbsp;</label><img src="../images/asientos2/asientoNormal.png">&nbsp;<label class="enfasis"><?php echo "DISPONIBLE";?>&nbsp;<img src="../images/asientos2/seleccionado.png">&nbsp;<label class="enfasis"><?php echo "SELECCIONADO";?></label></tr>
                                             </table>
                                         </div>
                                         </div>
-                                            <table id="continuar">
+                                            <!-- <table id="continuar">
                                                 <tr>
                                                     <td>
                                                         <img src="../images/asientos/regresar.gif" onclick="Util.Regresar();" class="links" />
@@ -547,15 +547,19 @@ if(isset($_POST['pasaje-bus'])) {
                                                         <img src="../images/asientos/continuar.gif" id="continuar" onclick="Util.avanzar();" class="links"/>
                                                     </td>
                                                 </tr>
-                                            </table>
+                                            </table> -->
                                             <input type="hidden" id="num_bol_selec" value="0" />
                                             <input type="hidden" id="bolsMax" value="0" />
                                             <input type="hidden" id="id_corrida" value="<?php echo $seleccionado; ?>" />
-                                        <input type="submit" name="comprar-asiento" class="btn btn-orange" id="" value="Siguiente">
+
+                                        <div class="button-container col-lg-12">
+                                            <input type="submit" name="comprar-asiento" class="next-button" onclick="Util.avanzar();" id="" value="Siguiente">
+                                            <a href="./buscar-pasaje.php"> <input class="back-button" type="button" value="Regresar"> </a>
+                                        </div>
                                         
                                     </form>
-                                </div>
-                            </div>
+                                <!-- </div> -->
+                            <!-- </div> -->
                             
                             <!-- /.box-body -->
                             <!-- end list-content -->

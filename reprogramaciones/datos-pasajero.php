@@ -14,6 +14,11 @@ if(isset($_GET['id']) && isset($_GET['as'])){
 
     $_SESSION['id-boleto'] = $id_boleto;
 
+    $nombre_p = $_SESSION['namePasajero'];
+    $apellidos_p = $_SESSION['lastnamePasajero'];
+    $correo_p = $_SESSION['emailPasajero'];
+    $dni_p = $_SESSION['dniPasajero'];
+
     $consulta="SELECT * FROM `itinerarios` WHERE `id` = $id_boleto";
 	$tabla = mysqli_query($link, $consulta);
 
@@ -35,7 +40,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
     <title>Datos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="./images/icon-web.png" />
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -86,13 +91,13 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.php" class="covid-button"><span>
+                    <a href="../covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
                     </a>
                 </div>
-                <a href="./index.php" class="navbar-brand">
+                <a href="../index.php" class="navbar-brand">
                     <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
@@ -100,14 +105,14 @@ if(isset($_GET['id']) && isset($_GET['as'])){
             <div class="collapse navbar-collapse" id="myNavbar1">
                 <ul class="nav navbar-nav navbar-right navbar-search-link">
                     <li class="dropdown">
-                        <a href="./index.php" class="dropdown-toggle">Inicio
+                        <a href="../index.php" class="dropdown-toggle">Inicio
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./about-us.html" class="dropdown-toggle">Nosotros
+                        <a href="../about-us.html" class="dropdown-toggle">Nosotros
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
@@ -120,30 +125,30 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="./encomiendas/encomiendas.php">Encomiendas</a></li>
+                            <li><a href="../encomiendas/encomiendas.php">Encomiendas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i
                                     class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="./rutas.html">Rutas</a></li>
+                            <li><a href="../destinations.html">Destinos</a></li>
+                            <li><a href="../rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="./faq.html" class="dropdown-toggle">Ayuda
+                        <a href="../faq.html" class="dropdown-toggle">Ayuda
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./contact-us.php" class="dropdown-toggle">Contacto
+                        <a href="../contact-us.php" class="dropdown-toggle">Contacto
                             <span>
                             </span>
                         </a>
                     </li>
-                    <li><a href="./covid-19.php" class="search-button"><span>
+                    <li><a href="../covid-19.php" class="search-button"><span>
                         Covid-19
                     </span>
                     </a></li>
@@ -162,11 +167,11 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                     <button class="btn btn-default" id="closebtn">&times;</button>
                 </div>
                 <div class="list-group panel">
-                    <a href="./index.php" class="list-group-item active" data-parent="#main-menu">
+                    <a href="../index.php" class="list-group-item active" data-parent="#main-menu">
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
-                    <a href="./about-us.html" class="list-group-item" data-parent="#main-menu">
+                    <a href="../about-us.html" class="list-group-item" data-parent="#main-menu">
                         <span><i class="fa fa-plane link-icon"></i></span>Nosotros
                     </a>
 
@@ -175,7 +180,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="./encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
+                        <a href="../encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
                     </div>
 
 
@@ -184,15 +189,15 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
-                        <a href="./destinations.html" class="list-group-item">Destinos</a>
-                        <a href="./rutas.html" class="list-group-item">Rutas</a>
+                        <a href="../destinations.html" class="list-group-item">Destinos</a>
+                        <a href="../rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
-                    <a href="./faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-ship link-icon"></i></span>Ayuda
                     </a>
 
-                    <a href="./contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-car link-icon"></i></span>Contacto
                     </a>
                 </div>
@@ -261,7 +266,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                                     <label>Nombres:</label>
                                                     <div class="group">
                                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                                        <input type="text" class="form-control-dates" placeholder="Nombres"  name="nombres<?php echo$i ?>" required="required" />
+                                                        <input type="text" class="form-control-dates" placeholder="Nombres" readonly="readonly" name="nombres<?php echo$i ?>" value="<?php echo $nombre_p ?>" required="required" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -270,7 +275,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                                     <label>Apellidos:</label>
                                                     <div class="group">
                                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                                        <input type="text" class="form-control-dates" placeholder="Apellidos" name="apellidos<?php echo$i ?>" required="required" />
+                                                        <input type="text" class="form-control-dates" placeholder="Apellidos" readonly="readonly" name="apellidos<?php echo$i ?>" value="<?php echo $apellidos_p ?>" required="required" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -279,7 +284,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                                     <label>DNI:</label>
                                                     <div class="group">
                                                         <i class="fa fa-id-card" aria-hidden="true"></i>
-                                                        <input type="text" class="form-control-dates" placeholder="DNI" name="dni<?php echo$i ?>" required="required" />
+                                                        <input type="text" class="form-control-dates" placeholder="DNI" readonly="readonly" name="dni<?php echo$i ?>" value="<?php echo $dni_p ?>" required="required" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -300,7 +305,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                                     <label>Telefono:</label>
                                                     <div class="group">
                                                         <i class="fa fa-phone" aria-hidden="true"></i>
-                                                        <input type="text" class="form-control-dates" placeholder="Telefono" name="telefono<?php echo$i ?>" required="required" />
+                                                        <input type="text" class="form-control-dates" placeholder="Telefono"  name="telefono<?php echo$i ?>" required="required" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -309,7 +314,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                                     <label>Correo:</label>
                                                     <div class="group">
                                                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                        <input type="email" class="form-control-dates" placeholder="Correo" name="correo<?php echo$i ?>" required="required" />
+                                                        <input type="email" class="form-control-dates" placeholder="Correo" readonly="readonly" name="correo<?php echo$i ?>" value="<?php echo $correo_p ?>" required="required" />
                                                     </div>
                                                 </div>
                                             </div>
