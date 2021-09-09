@@ -22,6 +22,7 @@ include("../base_datos/db.php");
         $_SESSION['apellido']  = $apellido_d;
         $_SESSION['dni'] = $dni_d;
         $_SESSION['precio-encomienda'] = $precio;
+        $_SESSION['fecha'] = $fecha;
 
         $sql = "INSERT INTO encomiendas VALUES (
             null, '$tipo_encomienda', '$origen', '$destino','$fecha','$nombre_d','$apellido_d','$dni_d','$celular_d',$precio)";

@@ -9,6 +9,10 @@ include("../base_datos/db.php");
 
         $fecha = $_POST['ticket-date'];
 
+        $fecha =explode("/",$fecha);
+
+        $fecha = $fecha[2]."-".$fecha[1]."-".$fecha[0];
+
         $_SESSION['NUEVA_FECHA_VIAJE'] = $fecha;
 
         $id_itinerario = $_SESSION['ID_ITINERARIO'];
