@@ -40,7 +40,7 @@ include("../../base_datos/db.php");
                 <div class="box-body"><!-- Date range --></div>
 
                 <div class="box-header">
-                    <h3 class="box-title text-center"><b>Itinerarios</b></h3>
+                    <h3 class="box-title text-center"><b>Solicitudes de devoluciones</b></h3>
                 </div>
                 <!-- /.box-header -->
                 
@@ -63,12 +63,14 @@ include("../../base_datos/db.php");
                                         <thead class="table-search-head">
                                             <tr>
                                                 
-                                                <th style="text-align:center">Origen</th>
-                                                <th style="text-align:center">Hora salida</th>
+                                                <th style="text-align:center">Codigo</th>
+                                                <th style="text-align:center">Nro. Itinerario</th>
+                                                <th style="text-align:center">Asiento</th>
                                                 <th style="text-align:center">Fecha</th>
-                                                <th style="text-align:center">Destino</th>
-                                                <th style="text-align:center">Hora llegada</th>
-                                                <th style="text-align:center">Precio</th>
+                                                <th style="text-align:center">DNI</th>
+                                                <th style="text-align:center">Nombre</th>
+                                                <th style="text-align:center">Apellido</th>
+                                                <th style="text-align:center">Monto</th>
                                                 <th style="text-align:center">Acciones</th>
                                                 <!-- <th class="text-center">Asientos disponibles</th> -->
                                             </tr>
@@ -80,21 +82,24 @@ include("../../base_datos/db.php");
                                             
                                             <?php
 
-                                            $query = "SELECT * from itinerarios";
+                                            $query = "SELECT * from boletos where estado = 0";
                                             $result_tasks = mysqli_query($link, $query); 
                                             while($row = mysqli_fetch_assoc($result_tasks)) { 
 
                                             ?>
                                             <tr>                                                
-                                                <td><?php echo $row['ciudad_salida'] ?></td>
-                                                <td><?php echo $row['hora_salida'] ?></td>
-                                                <td><?php echo $row['fecha_salida'] ?></td>
-                                                <td><?php echo $row['ciudad_llegada'] ?></td>
-                                                <td><?php echo $row['hora_llegada'] ?></td>
+                                                <td><?php echo $row['codigo_boleto'] ?></td>
+                                                <td><?php echo $row['id_itinerario'] ?></td>
+                                                <td><?php echo $row['asiento'] ?></td>
+                                                <td><?php echo $row['fecha_venta'] ?></td>
+                                                <td><?php echo $row['DNIPasajero'] ?></td>
+                                                <td><?php echo $row['nombrePasajero'] ?></td>
+                                                <td><?php echo $row['apellidoPasajero'] ?></td>
                                                 <td><?php echo "S/. " . $row['precio'] ?></td>
+                                                
                                                 <td class  ="text-center">
-                                                    <a href="eliminar_itinerario.php?codigo_itinerario=<?php echo $row['id']?>">
-                                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    <a href="aceptar_devoluciones.php?aceptar_devolucion=<?php echo $row['codigo_boleto']?>">
+                                                    <i class="fa fa-check-square" aria-hidden="true"></i>
                                                     </a>
                                                 </td>
                                                 
