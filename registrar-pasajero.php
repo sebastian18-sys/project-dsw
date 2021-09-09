@@ -30,6 +30,8 @@ include("base_datos/db.php");
 
             $codigo_boleto = $CB_0.$CB_4.$CB_1.$CB_2.$CB_3;
 
+            $_SESSION['CODIGO_BOLETO'] = $codigo_boleto; 
+
             $query = "INSERT INTO boletos VALUES (
                 '$codigo_boleto', $id_itinerario, $asiento, '$fecha','$firstname','$lastname','$email','$dni' , $precio,null,1)";
             $result = mysqli_query($link, $query);  //Query

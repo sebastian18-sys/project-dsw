@@ -3,7 +3,7 @@
 session_start();
 include("base_datos/db.php");
 
-$id = $_SESSION['id-boleto'];
+$codigo_boleto = $_SESSION['CODIGO_BOLETO'];
 $tarjetafinal = $_SESSION['tarjeta'];
 $preciofinal = $_SESSION['precio-total'];
 $correofinal = $_SESSION['correo-email'];
@@ -15,10 +15,10 @@ $fechafinal= $_SESSION['fecha'];
 
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <title>Buscar pasaje</title>
+    <title>Confirmación pasaje</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -72,7 +72,7 @@ $fechafinal= $_SESSION['fecha'];
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.html" class="covid-button"><span>
+                    <a href="./covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
@@ -86,7 +86,7 @@ $fechafinal= $_SESSION['fecha'];
             <div class="collapse navbar-collapse" id="myNavbar1">
                 <ul class="nav navbar-nav navbar-right navbar-search-link">
                     <li class="dropdown">
-                        <a href="./index.html" class="dropdown-toggle">Inicio
+                        <a href="./index.php" class="dropdown-toggle">Inicio
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
@@ -130,7 +130,7 @@ $fechafinal= $_SESSION['fecha'];
                             </span>
                         </a>
                     </li>
-                    <li><a href="./covid-19.html" class="search-button"><span>
+                    <li><a href="./covid-19.php" class="search-button"><span>
                         Covid-19
                     </span>
                     </a></li>
@@ -149,7 +149,7 @@ $fechafinal= $_SESSION['fecha'];
                     <button class="btn btn-default" id="closebtn">&times;</button>
                 </div>
                 <div class="list-group panel">
-                    <a href="./index.html" class="list-group-item active" data-parent="#main-menu">
+                    <a href="./index.php" class="list-group-item active" data-parent="#main-menu">
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
@@ -180,7 +180,7 @@ $fechafinal= $_SESSION['fecha'];
                         <span><i class="fa fa-ship link-icon"></i></span>Ayuda
                     </a>
 
-                    <a href="./contact-us.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="./contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-car link-icon"></i></span>Contacto
                     </a>
                 </div>
@@ -224,7 +224,7 @@ $fechafinal= $_SESSION['fecha'];
                             <div class="container-text">
                                 <div class="text-datos">
                                     <h3>Hola,&nbsp; </h3>
-                                    <h3>gracias por tu pago</h3>
+                                    <h3>gracias por confiar Wiñaymarca</h3>
                                 </div>
                                 <p>En breve te enviaremos un email donde estará tu <br>constancia de operación</p>
                                 <div class="container-monto">
@@ -259,7 +259,7 @@ $fechafinal= $_SESSION['fecha'];
                                     </div>
                                     <div class="text-datos">
                                         <p>Código del boleto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $id ?></p>
+                                        <p><?php echo $codigo_boleto ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -408,32 +408,20 @@ $fechafinal= $_SESSION['fecha'];
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    // If necessary, modify the path in the require statement below to refer to the
-    // location of your Composer autoload.php file.
-    require '/email/vendor/autoload.php';
 
-    // Replace sender@example.com with your "From" address.
-    // This address must be verified with Amazon SES.
+    require './email/vendor/autoload.php';
+
     $sender = 'ventaswinaymarcasac@gmail.com';
     $senderName = '-- Winaymarca --';
 
-    // Replace recipient@example.com with a "To" address. If your account
-    // is still in the sandbox, this address must be verified.
-    $recipient = 'sebastian.ccopacondori@unmsm.edu.pe';
+    $recipient = $correofinal;
 
     // Replace smtp_username with your Amazon SES SMTP user name.
-    $usernameSmtp = 'AKIASNDTXSRALTINZIAF';
+    $usernameSmtp = 'AKIASNDTXSRAEQIIK3V7';
 
     // Replace smtp_password with your Amazon SES SMTP password.
-    $passwordSmtp = 'BBmYEf49wQ5UuuHq8BrUGsO1A5pJxD8TStHI83vZO8Zj';
+    $passwordSmtp = 'BILvjKocE3/MeGyxtt1vQWZI239Xz+HdzEbY0Jjmtaly';
 
-    // Specify a configuration set. If you do not want to use a configuration
-    // set, comment or remove the next line.
-    //$configurationSet = 'ConfigSet';
-
-    // If you're using Amazon SES in a region other than US West (Oregon),
-    // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
-    // endpoint in the appropriate region.
     $host = 'email-smtp.us-east-2.amazonaws.com';
     $port = 587;
 
@@ -441,10 +429,18 @@ $fechafinal= $_SESSION['fecha'];
     $subject = '-- GRACIAS POR COMPRAR SU PASAJE WINAYMARCA --';
 
     // The plain-text body of the email
-    $bodyText =  "-- GAAAAAAAAAAAAAAAAAAA--";
+    $bodyText =  "Esperemos que su viaje sea de su agrado";
 
     // The HTML-formatted body of the email
-    $bodyHtml = '-- Y MÁS GAAAAAAAAAAAAAAAAAAAAA --';
+    $bodyHtml = "<html><body>"
+    ."<table class='tg' style='border-style: dotted;'>"
+              ."<tr><td class='tg-3zav'>DNI: </td><td class='tg-3zav'>" . $dnifinal . "</td></tr>"
+              ."<tr><td class='tg-3zav'>Origen: </td><td class='tg-3zav'>" . $origenfinal . "</td></tr>"
+              ."<tr><td class='tg-3zav'>Destino: </td><td class='tg-3zav'>" . $destinofinal . "</td></tr>"
+              ."<tr><td class='tg-3zav'>Fecha de viaje: </td><td class='tg-3zav'>" . $fechafinal. "</td></tr>"
+              ."<tr><td class='tg-3zav'>Código de boleto: </td><td class='tg-3zav'>" . $codigo_boleto . "</td></tr>"
+              . "</table></body></html>";
+    
 
     $mail = new PHPMailer(true);
 
@@ -470,7 +466,7 @@ $fechafinal= $_SESSION['fecha'];
         $mail->Body       = $bodyHtml;
         $mail->AltBody    = $bodyText;
         $mail->Send();
-        echo "Email sent!" , PHP_EOL;
+        echo "Correo enviado!" , PHP_EOL;
     } catch (phpmailerException $e) {
         echo "An error occurred. {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
     } catch (Exception $e) {
