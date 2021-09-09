@@ -321,7 +321,7 @@ $dnidev = $_SESSION['dni-dev'];
 
     // Replace sender@example.com with your "From" address.
     // This address must be verified with Amazon SES.
-    $sender = 'ventaswinaymarcasac@gmail.com';
+    $sender = $correodev;
     $senderName = '-- Winaymarca --';
 
     // Replace recipient@example.com with a "To" address. If your account
@@ -345,13 +345,17 @@ $dnidev = $_SESSION['dni-dev'];
     $port = 587;
 
     // The subject line of the email
-    $subject = '-- GRACIAS POR COMPRAR SU PASAJE WINAYMARCA --';
+    $subject = '-- SOLICITUD REGISTRADA --';
 
     // The plain-text body of the email
-    $bodyText =  "-- GAAAAAAAAAAAAAAAAAAA--";
+    $bodyText =  "Su solicitud está siendo atendida. Este proceso puede demorar unos cuantos días.";
 
     // The HTML-formatted body of the email
-    $bodyHtml = '-- Y MÁS GAAAAAAAAAAAAAAAAAAAAA --';
+    $bodyHtml = "<html><body>"
+    ."<table class='tg' style='border-style: dotted;'>"
+              ."<tr><td class='tg-3zav'>Mensaje: </td><td class='tg-3zav'>" . "Pronto le enviaremos un correo de validación. Agradecemos su paciencia." . "</td></tr>"
+
+              . "</table></body></html>";
 
     $mail = new PHPMailer(true);
 

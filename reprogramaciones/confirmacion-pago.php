@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-include("base_datos/db.php");
+include("../base_datos/db.php");
 
 $codigo_boleto = $_SESSION['CODIGO_BOLETO'];
 $tarjetafinal = $_SESSION['tarjeta'];

@@ -322,8 +322,8 @@ $apellidos = $_SESSION['lastname'];
     $bodyHtml = "<html><body>"
     ."<table class='tg' style='border-style: dotted;'>"
               ."<tr><td class='tg-3zav'>DNI: </td><td class='tg-3zav'>" . $dni . "</td></tr>"
-              ."<tr><td class='tg-3zav'>Origen: </td><td class='tg-3zav'>" . $nombre . "</td></tr>"
-              ."<tr><td class='tg-3zav'>Destino: </td><td class='tg-3zav'>" . $apellidos . "</td></tr>"
+              ."<tr><td class='tg-3zav'>Nombre: </td><td class='tg-3zav'>" . $nombre . "</td></tr>"
+              ."<tr><td class='tg-3zav'>Apellido: </td><td class='tg-3zav'>" . $apellidos . "</td></tr>"
               ."<tr><td class='tg-3zav'>Estado: </td><td class='tg-3zav'>" . "Registrado". "</td></tr>"
               . "</table></body></html>";
     
