@@ -14,6 +14,14 @@ include("../base_datos/db.php");
         $celular_d =  $_POST['celular-destinatario'];
         $precio = $_POST['precio-encomienda'];
 
+        $_SESSION['tipo'] = $tipo_encomienda;
+
+        $_SESSION['origen'] = $origen;
+        $_SESSION['destino'] = $destino;
+        $_SESSION['nombre'] = $nombre_d;
+        $_SESSION['apellido']  = $apellido_d;
+        $_SESSION['dni'] = $dni_d;
+        $_SESSION['precio-encomienda'] = $precio;
 
         $sql = "INSERT INTO encomiendas VALUES (
             null, '$tipo_encomienda', '$origen', '$destino','$fecha','$nombre_d','$apellido_d','$dni_d','$celular_d',$precio)";

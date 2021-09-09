@@ -413,11 +413,11 @@ include("../base_datos/db.php");
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label>Desde:</label>
+                                                    <label>Peso:</label>
                                                     <div class="group">
                                                         <i class="fa fa-map-marker"></i>
                                                         <select id="pesoPaquete" name="peso-paquete" class="form-control-dates">
-                                                            <option disabled value="-1">Peso</option>
+                                                            <option value="-1">Peso</option>
                                                             
                                                             <option value="Menos de 5kg">Menos de 5kg</option>
                                                             <option value="Menos de 10kg">Menos de 10kg</option>
@@ -430,10 +430,10 @@ include("../base_datos/db.php");
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label>Desde:</label>
+                                                    <label>Precio:</label>
                                                     <div class="group">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        <input id="pesoSeleccionado" type="text" name="precio-encomienda" class="form-control-dates" placeholder="Precio">
+                                                        <i class="fa fa-money" aria-hidden="true"></i>
+                                                        <input id="pesoSeleccionado" type="text" readonly="readonly" name="precio-encomienda" class="form-control-dates" placeholder="Precio">
                                                     </div>
                                                 </div>
                                             </div>
@@ -442,15 +442,71 @@ include("../base_datos/db.php");
                                     </div>
                                     
                                 </div>
+
+                                <div class="container-dates">
+                                    <div class="container-dates__form col-lg-8">
+                                        
+                                            <div class="form-head col-lg-12">
+                                                <h4>Datos del destinatario</h4>
+                                                <hr>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Nombre:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                                        <input type="text" name="nombre-destinatario" class="form-control-dates" placeholder="Nombre">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Apellidos:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                                        <input type="text" name="apellido-destinatario" class="form-control-dates" placeholder="Apellido">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>DNI:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-id-card" aria-hidden="true"></i>
+                                                        <input type="text" name="dni-destinatario" class="form-control-dates" placeholder="DNI">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Telefono:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                                        <input type="text" name="celular-destinatario" class="form-control-dates" placeholder="Celular">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <div class="group">
+                                                        <input type="hidden" name="valor-encomienda" value="paquete">
+                                                    </div>
+                                                </div>
+                                            </div>
+      
+                    
+                                    </div>
+                                    
+                                </div>
                                 
 
                                 <div class="button-container col-sm-6">
-                                    <a href="#"> <input class="back-button" type="button" value="Regresar"> </a>
+                                    <a href="./encomiendas.php"> <input class="back-button" type="button" value="Regresar"> </a>
                                     
                                 </div>
                                 <div class="button-container col-sm-6">
-                                    <Input class="next-button" name="Registrar_Pasajero" Type="submit" value="Continuar">
-                                    
+                                    <Input class="next-button" name="verificar-encomienda" Type="submit" value="Continuar"> 
                                 </div>
                                 
                                 
