@@ -7,7 +7,8 @@ $codigo_boleto = $_SESSION['CODIGO_BOLETO'];
 $tarjetafinal = $_SESSION['tarjeta'];
 $preciofinal = $_SESSION['precio-total'];
 $correofinal = $_SESSION['correo-email'];
-$dnifinal = $_SESSION['dni'];
+// $dnifinal = $_SESSION['dni'];
+$cardfinal = $_SESSION['cardh'];
 $origenfinal = $_SESSION['origen'];
 $destinofinal = $_SESSION['destino'];
 $fechafinal= $_SESSION['fecha'];
@@ -237,7 +238,7 @@ $fechafinal= $_SESSION['fecha'];
                                     </div>
                                     <div class="text-datos">
                                         <p>DNI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $dnifinal ?></p>
+                                        <p><?php echo $cardfinal ?></p>
                                     </div>
                                     <div class="text-datos">
                                         <p>Origen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>

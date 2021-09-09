@@ -373,7 +373,7 @@ $fecha_d = $_SESSION['fecha'];
                             <!-- end list-content -->
                         </div>
                         <div class="view-all text-center"><a href="javascript:void(0);" onclick="Util.imprimirBoleto();">Imprimir Boleto</div>
-                        <div class="view-all text-center"><a href="./index.php" class="btn btn-orange">Ir al inicio</a></div>
+                        <div class="view-all text-center"><a href="../index.php" class="btn btn-orange">Ir al inicio</a></div>
                         <!-- end f-list-block -->
                     </div>
                     <!-- FIN -->

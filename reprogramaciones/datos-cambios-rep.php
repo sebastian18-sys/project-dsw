@@ -237,13 +237,13 @@
                   <form class="form-covid" action="validar-busqueda-viaje.php" method="POST">
                     <div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                            <input type="text" class="form-control-dates" placeholder="DNI" name="dni-changes" required/>
+                            <input autocomplete="off" type="text" class="form-control-dates" placeholder="DNI" name="dni-changes" required/>
                             <span>
                                 <i class="fa fa-id-card" aria-hidden="true"></i>
                             </span>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                            <input type="text" class="form-control-dates" placeholder="Código de reserva" name="cod-reserva-changes" required/>
+                            <input autocomplete="off" type="text" class="form-control-dates" placeholder="Código de reserva" name="cod-reserva-changes" required/>
                             <span>
                                 <i class="fa fa-ticket" aria-hidden="true"></i>
                             </span>

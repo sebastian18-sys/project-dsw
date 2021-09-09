@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("base_datos/db.php");
+include("../base_datos/db.php");
 
     $id_boleto = $_SESSION['boleto-changes'];
 
@@ -22,18 +22,18 @@ include("base_datos/db.php");
     <title>Devoluciones</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="images/icon-web.png" />
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
     <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" id="cpswitch" href="css/orange.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" id="cpswitch" href="../css/orange.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
 </head>
 
 <body>
@@ -76,13 +76,13 @@ include("base_datos/db.php");
                     <!-- <a href="javascript:void(0)" class="search-button">
                                 <span><i class="fa fa-search"></i></span>
                             </a> -->
-                    <a href="./covid-19.php" class="covid-button"><span>
+                    <a href="../covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                             Covid-19
                         </span>
                     </a>
                 </div>
-                <a href="./index.php" class="navbar-brand">
+                <a href="../index.php" class="navbar-brand">
                     <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
@@ -90,14 +90,14 @@ include("base_datos/db.php");
             <div class="collapse navbar-collapse" id="myNavbar1">
                 <ul class="nav navbar-nav navbar-right navbar-search-link">
                     <li class="dropdown">
-                        <a href="./index.php" class="dropdown-toggle">Inicio
+                        <a href="../index.php" class="dropdown-toggle">Inicio
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./about-us.html" class="dropdown-toggle">Nosotros
+                        <a href="../about-us.html" class="dropdown-toggle">Nosotros
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
@@ -110,32 +110,32 @@ include("base_datos/db.php");
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="./encomiendas/encomiendas.php">Encomiendas</a></li>
+                            <li><a href="../encomiendas/encomiendas.php">Encomiendas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="./rutas.html">Rutas</a></li>
+                            <li><a href="../destinations.html">Destinos</a></li>
+                            <li><a href="../rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="./faq.html" class="dropdown-toggle">Ayuda
+                        <a href="../faq.html" class="dropdown-toggle">Ayuda
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./contact-us.php" class="dropdown-toggle">Contacto
+                        <a href="../contact-us.php" class="dropdown-toggle">Contacto
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href="./covid-19.php" class="search-button"><span> Covid-19 </span></a>
+                        <a href="../covid-19.php" class="search-button"><span> Covid-19 </span></a>
                     </li>
                 </ul>
             </div>
@@ -154,11 +154,11 @@ include("base_datos/db.php");
                     <button class="btn btn-default" id="closebtn">&times;</button>
                 </div>
                 <div class="list-group panel">
-                    <a href="./index.php" class="list-group-item active" data-parent="#main-menu">
+                    <a href="../index.php" class="list-group-item active" data-parent="#main-menu">
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
-                    <a href="./about-us.html" class="list-group-item" data-parent="#main-menu">
+                    <a href="../about-us.html" class="list-group-item" data-parent="#main-menu">
                         <span><i class="fa fa-plane link-icon"></i></span>Nosotros
                     </a>
 
@@ -167,7 +167,7 @@ include("base_datos/db.php");
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="./encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
+                        <a href="../encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
                     </div>
 
                     <a href="#tours-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
@@ -175,15 +175,15 @@ include("base_datos/db.php");
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
-                        <a href="./destinations.html" class="list-group-item">Destinos</a>
-                        <a href="./rutas.html" class="list-group-item">Rutas</a>
+                        <a href="../destinations.html" class="list-group-item">Destinos</a>
+                        <a href="../rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
-                    <a href="./faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-ship link-icon"></i></span>Ayuda
                     </a>
 
-                    <a href="./contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-car link-icon"></i></span>Contacto
                     </a>
                 </div>
@@ -198,7 +198,7 @@ include("base_datos/db.php");
                 <div class="col-sm-12">
                     <h1 class="page-title">Devoluciones</h1>
                     <ul class="breadcrumb">
-                        <li><a href="./index.php">Inicio</a></li>
+                        <li><a href="../index.php">Inicio</a></li>
                         <li class="active">Ayuda</li>
                     </ul>
                 </div>
@@ -217,16 +217,16 @@ include("base_datos/db.php");
                 <div class="row">
                     <!-- end columns -->
                     <div class="col-sm-12">
-                        <div class="flex-content">
-                            <div class="custom-form custom-form-fields">
+                        <!-- <div class="flex-content"> -->
+                            <!-- <div class="custom-form custom-form-fields"> -->
                                 <h3>Ingresa tus datos aquí</h3>
                                 <!-- <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p> -->
                                 <!-- end columns -->
                                 <div class="col-sm-12">
-                                    <div class="flex-content">
-                                        <div class="custom-form custom-form-fields">
+                                    <!-- <div class="flex-content"> -->
+                                        <!-- <div class="custom-form custom-form-fields"> -->
                                             <div class="container-dates">
-                                                <div class="container-dates__form-covid col-lg-8">
+                                                <div class="container-dates__form col-lg-8">
                                                     <div class="form-head col-lg-12">
                                                         <h4>Motivo por el cual estas pidiendo tu devolución</h4>
                                                         <hr>
@@ -235,9 +235,16 @@ include("base_datos/db.php");
                                                         <div class="form-group">
                                                             <label>Motivo:</label>
                                                             <div class="group">
-                                                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                                                <i class="fa fa-envelope" aria-hidden="true"></i>
                                                                 <select class="form-control-dates" name="opcion-motivo" id="">
-                                                                    <option value="">F mi viaje</option>
+                                                                    <option value="">Seleccionar</option>
+                                                                    <option value="">Billetes duplicados</option>
+                                                                    <option value="">Cambio de itinerarios</option>
+                                                                    <option value="">Cancelación del viaje</option>
+                                                                    <option value="">Demora en la salida del bus</option>
+                                                                    <option value="">Documentos extraviados</option>
+                                                                    <option value="">Enfermadad</option>
+                                                                    <option value="">Persona fallecida</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -246,7 +253,7 @@ include("base_datos/db.php");
                                                         <div class="form-group">
                                                             <label>Mensaje:</label>
                                                             <div class="group">
-                                                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                                                <i class="fa fa-envelope" aria-hidden="true"></i>
                                                                 <textarea   cols="30" rows="12" name="text-motivo" class="form-control-dates"></textarea>
                                                             </div>
                                                         </div>
@@ -292,7 +299,7 @@ include("base_datos/db.php");
                                                                 <label>Correo:</label>
                                                                 <div class="group">
                                                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                                    <input type="email" class="form-control-dates" placeholder="Correo" name="correo-dev" required="required" value="<?php echo $correo ?>" />
+                                                                    <input type="email" class="form-control-dates" placeholder="Correo" name="correo-dev" readonly="readonly" required="required" value="<?php echo $correo ?>" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -319,20 +326,20 @@ include("base_datos/db.php");
 
                                                         <div class="button-container col-sm-12">
                                                             <Input class="next-button" name="Registrar_Devolucion" Type="submit" value="Enviar">
-                                                            <a href="./covid-19.php"> <input class="back-button" type="button" value="Cancelar"> </a>
+                                                            <a href="./datos-cambios-dev.php"> <input class="back-button" type="button" value="Cancelar"> </a>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <!-- </div> -->
                                         <!-- end custom-form -->
-                                    </div>
+                                    <!-- </div> -->
                                     <!-- end form-content -->
                                 </div>
                                 </form>
-                            </div>
+                            <!-- </div> -->
                             <!-- end custom-form -->
-                        </div>
+                        <!-- </div> -->
                         <!-- end form-content -->
                     </div>
                     <!-- end columns -->
@@ -356,16 +363,16 @@ include("base_datos/db.php");
                     <div class="list-container">
                         <div class="list__item">
                             <div class="list__item__img">
-                                <img src="./images/payment-1.png" alt="master-card" />
+                                <img src="../images/payment-1.png" alt="master-card" />
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-2.png" alt="master-card" />
+                                <img src="../images/payment-2.png" alt="master-card" />
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-3.png" alt="master-card" />
+                                <img src="../images/payment-3.png" alt="master-card" />
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-4.png" alt="master-card" />
+                                <img src="../images/payment-4.png" alt="master-card" />
                             </div>
                         </div>
                     </div>
@@ -462,9 +469,9 @@ include("base_datos/db.php");
     </section>
     <!-- end footer -->
     <!-- Page Scripts Starts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom-navigation.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/custom-navigation.js"></script>
     <!-- Page Scripts Ends -->
 </body>
 

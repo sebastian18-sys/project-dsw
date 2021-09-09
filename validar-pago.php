@@ -11,13 +11,15 @@ $count = $_SESSION['number'];
         
         $tarjeta = $_POST['numtarjeta'];
         $correo = $_POST['correo-pago'];
-        $dni = $_POST['dni-pago'];
+        // $dni = $_POST['dni-pago'];
+        $card = $_POST['cardholder-pago'];
         $precio = $_SESSION['ciudad-precio'];
         $preciof = $precio*($count);
 
 
 
-        $_SESSION['dni'] = $dni;
+        // $_SESSION['dni'] = $dni;
+        $_SESSION['cardh'] = $card;
         $_SESSION['tarjeta'] = $tarjeta;
         $_SESSION['precio-total'] = $preciof;
         $_SESSION['correo-email'] = $correo;

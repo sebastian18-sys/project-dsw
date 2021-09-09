@@ -19,7 +19,7 @@ include("../base_datos/db.php");
 <html lang="en">
 
 <head>
-    <title>Covid-19</title>
+    <title>Reprogramacion</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="../images/icon-web.png" />
@@ -223,14 +223,14 @@ include("../base_datos/db.php");
                 <div class="row">
                     <!-- end columns -->
                     <div class="col-sm-12">
-                        <div class="flex-content">
-                            <div class="custom-form custom-form-fields">
+                        <!-- <div class="flex-content"> -->
+                            <!-- <div class="custom-form custom-form-fields"> -->
                                 <h3>Ingresa tus datos aquí</h3>
                                 <!-- <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p> -->
                                 <!-- end columns -->
                                 <div class="col-sm-12">
-                                    <div class="flex-content">
-                                        <div class="custom-form custom-form-fields">
+                                    <!-- <div class="flex-content"> -->
+                                        <!-- <div class="custom-form custom-form-fields"> -->
                                             <div class="container-dates">
                                                 <div class="container-dates__form-covid col-lg-8">
                                                     <div class="form-head col-lg-12">
@@ -244,6 +244,13 @@ include("../base_datos/db.php");
                                                                 <i class="fa fa-id-card" aria-hidden="true"></i>
                                                                 <select class="form-control-dates" name="opcion-motivo" id="">
                                                                     <option value="">Seleccionar</option>
+                                                                    <option value="">Billetes duplicados</option>
+                                                                    <option value="">Cambio de itinerarios</option>
+                                                                    <option value="">Cancelación del viaje</option>
+                                                                    <option value="">Demora en la salida del bus</option>
+                                                                    <option value="">Documentos extraviados</option>
+                                                                    <option value="">Enfermadad</option>
+                                                                    <option value="">Persona fallecida</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -266,31 +273,31 @@ include("../base_datos/db.php");
                                                             <h4>Nuevo horario</h4>
                                                             <hr>
                                                         </div>
-                                                        <div class="col-sm-6">
+                                                        <div class="col-sm-12">
                                                             <div class="form-group">
                                                                 <label>Fecha:</label>
                                                                 <div class="group right-icon">
-                                                                    <input type="text" autocomplete="off" class="form-control dpd1" name="ticket-date" placeholder="Fecha"><i class="fa fa-calendar"></i>
+                                                                    <input type="text" autocomplete="off" class="form-control-dates dpd1" name="ticket-date" placeholder="Fecha"><i class="fa fa-calendar"></i>
                                                                 </div>
                                                             </div>
                                                         </div>
 
                                                         <div class="button-container col-sm-12">
-                                                            <input type="submit" name="Registrar_Fecha_Cambio" value="Siguiente" class="btn-orange-next">
-                                                            <a href="../covid-19.php"> <input class="back-button" type="button" value="Volver"> </a>
+                                                            <input class="next-button" type="submit" name="Registrar_Fecha_Cambio" value="Siguiente">
+                                                            <a href="./datos-cambios-rep.php"> <input class="back-button" type="button" value="Volver"> </a>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <!-- </div> -->
                                         <!-- end custom-form -->
-                                    </div>
+                                    <!-- </div> -->
                                     <!-- end form-content -->
                                 </div>
                                 
-                            </div>
+                            <!-- </div> -->
                             <!-- end custom-form -->
-                        </div>
+                        <!-- </div> -->
                         <!-- end form-content -->
                     </div>
                     <!-- end columns -->

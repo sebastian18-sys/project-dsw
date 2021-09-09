@@ -257,31 +257,13 @@
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label>Nombres:</label>
+                                                <label>Card Holder:</label>
                                                 <div class="group">
                                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                                    <input type="text" class="form-control-dates" placeholder="Nombres" name="nombres-pago" required="required" />
+                                                    <input type="text" class="form-control-dates" placeholder="Nombres" name="cardholder-pago" required="required" />
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label>Apellidos:</label>
-                                                <div class="group">
-                                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                                    <input type="text" class="form-control-dates" placeholder="Apellidos" name="apellidos-pago" required="required" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label>Dni:</label>
-                                                <div class="group">
-                                                    <i class="fa fa-id-card" aria-hidden="true"></i>
-                                                    <input type="text" class="form-control-dates" placeholder="DNI" name="dni-pago" required="required" />
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div>   
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label>Correo:</label>
