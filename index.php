@@ -10,7 +10,7 @@ include("./base_datos/db.php");
     <title>Index</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/icon-web.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -136,7 +136,7 @@ include("./base_datos/db.php");
                                     class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
+                            <li><a href="./rutas.html">Rutas</a></li>
                             <!-- <li><a href="tour-listing-right-sidebar.html">List View Right Sidebar</a></li>
                             <li><a href="tour-grid-left-sidebar.html">Grid View Left Sidebar</a></li>
                             <li><a href="tour-grid-right-sidebar.html">Grid View Right Sidebar</a></li>
@@ -442,7 +442,7 @@ include("./base_datos/db.php");
                                         <!-- end columns -->
                                         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                                             <div class="row">
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="col-xs-12 col-sm-6 col-md-6">
                                                     <!-- <label for="">¿Cuándo viajaras?</label> -->
                                                     <div class="form-group left-icon">
                                                         <input type="text" autocomplete="off" class="form-control dpd1" name="ticket-date" placeholder="Ida"><i class="fa fa-calendar"></i>
@@ -464,7 +464,7 @@ include("./base_datos/db.php");
                                                         <!-- <input type="hidden" id="fechahoy" value=""/> -->
                                                     <!-- </div> -->
                                                 <!-- </div> -->
-                                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-5">
+                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
                                                     <div class="form-group right-icon">
                                                         <select class="form-control">
                                                             <option selected>Pasajeros</option>
@@ -692,7 +692,7 @@ include("./base_datos/db.php");
                 <div class="col-sm-6 col-md-3">
                     <div class="b-feature-block"><span><i class="fa fa-bed"></i></span>
                         <h3>Asientos ergonómicos</h3>
-                        <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                        <p>Permite ser regulada en función de las características de la persona, tiene un diseño que se adapta a las formas del cuerpo y garantiza un reparto de presiones equilibrado, necesario para conseguir una postura cómoda y saludable.</p>
                     </div>
                     <!-- end b-feature-block -->
                 </div>
@@ -700,7 +700,7 @@ include("./base_datos/db.php");
                 <div class="col-sm-6 col-md-3">
                     <div class="b-feature-block"><span><i class="fa fa-line-chart"></i></span>
                         <h3>10 años de experiencia</h3>
-                        <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                        <p>Conoce cuáles son las necesidades de los clientes y cómo pueden de esta manera ofrecerles un mejor servicio. Además que son una empresa reconocida en el mercado y una de las primeras opciones al momento de viajar.</p>
                     </div>
                     <!-- end b-feature-block -->
                 </div>
@@ -708,7 +708,7 @@ include("./base_datos/db.php");
                 <div class="col-sm-6 col-md-3">
                     <div class="b-feature-block"><span><i class="fa fa-bus"></i></span>
                         <h3>Flota moderna</h3>
-                        <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                        <p>Cuentan con buses modernos, los cuales les brinda seguridad a los clientes a la hora de viajar; además que cuentan con la tecnología que hace que su viaje sea más placentero.</p>
                     </div>
                     <!-- end b-feature-block -->
                 </div>
@@ -716,7 +716,7 @@ include("./base_datos/db.php");
                 <div class="col-sm-6 col-md-3">
                     <div class="b-feature-block"><span><i class="fa fa-wifi"></i></span>
                         <h3>Zona Wifi</h3>
-                        <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                        <p>Sabiendo que para los clientes es importante estar conectado a internet, el bus te permite estar conectado mientras estás disfrutas de tu viaje por lo que no te perderás de las noticias que sucedan a tu alrededor.</p>
                     </div>
                     <!-- end b-feature-block -->
                 </div>
@@ -742,19 +742,47 @@ include("./base_datos/db.php");
                         <div class="item">
                             <div class="main-block tour-block">
                                 <div class="main-img">
-                                    <a href="#"><img src="images/tour-1.jpg" class="img-responsive" alt="tour-img" /></a>
+                                    <a href="#"><img src="images/rutas/ruta-1.jpg" class="img-responsive" alt="tour-img" /></a>
                                 </div>
                                 <!-- end offer-img -->
                                 <div class="offer-price-2">
                                     <ul class="list-unstyled">
-                                        <li class="price">$568.00<a href="#"><span class="arrow"><i
+                                        <li class="price">S/100.00</li>
+                                    </ul>
+                                </div>
+                                <!-- end offer-price-2 -->
+                                <div class="main-info tour-info">
+                                    <div class="main-title tour-title"><a href="#">Lima</a>
+                                        <p>De: Arequipa</p>
+                                        <div class="rating"><span><i class="fa fa-star orange"></i></span><span><i
+                                                    class="fa fa-star orange"></i></span><span><i
+                                                    class="fa fa-star orange"></i></span><span><i
+                                                    class="fa fa-star orange"></i></span><span><i
+                                                    class="fa fa-star fray"></i></span></div>
+                                    </div>
+                                    <!-- end tour-title -->
+                                </div>
+                                <!-- end tour-info -->
+                            </div>
+                            <!-- end tour-block -->
+                        </div>
+                        <!-- end item -->
+                        <div class="item">
+                            <div class="main-block tour-block">
+                                <div class="main-img">
+                                    <a href="#"><img src="images/rutas/ruta-2.jpg" class="img-responsive" alt="tour-img" /></a>
+                                </div>
+                                <!-- end offer-img -->
+                                <div class="offer-price-2">
+                                    <ul class="list-unstyled">
+                                        <li class="price">S/100.00<a href="#"><span class="arrow"><i
                                                         class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                                 <!-- end offer-price-2 -->
                                 <div class="main-info tour-info">
-                                    <div class="main-title tour-title"><a href="#">China Temple Tour</a>
-                                        <p>From: China</p>
+                                    <div class="main-title tour-title"><a href="#">Puno</a>
+                                        <p>De: Arequipa</p>
                                         <div class="rating"><span><i class="fa fa-star orange"></i></span><span><i
                                                     class="fa fa-star orange"></i></span><span><i
                                                     class="fa fa-star orange"></i></span><span><i
@@ -771,19 +799,19 @@ include("./base_datos/db.php");
                         <div class="item">
                             <div class="main-block tour-block">
                                 <div class="main-img">
-                                    <a href="#"><img src="images/tour-2.jpg" class="img-responsive" alt="tour-img" /></a>
+                                    <a href="#"><img src="images/rutas/ruta-7.jpg" class="img-responsive" alt="tour-img" /></a>
                                 </div>
                                 <!-- end offer-img -->
                                 <div class="offer-price-2">
                                     <ul class="list-unstyled">
-                                        <li class="price">$745.00<a href="#"><span class="arrow"><i
+                                        <li class="price">S/100.00<a href="#"><span class="arrow"><i
                                                         class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                                 <!-- end offer-price-2 -->
                                 <div class="main-info tour-info">
-                                    <div class="main-title tour-title"><a href="#">African Safari Tour</a>
-                                        <p>From: Africa</p>
+                                    <div class="main-title tour-title"><a href="#">Cusco</a>
+                                        <p>De: Lima</p>
                                         <div class="rating"><span><i class="fa fa-star orange"></i></span><span><i
                                                     class="fa fa-star orange"></i></span><span><i
                                                     class="fa fa-star orange"></i></span><span><i
@@ -800,48 +828,19 @@ include("./base_datos/db.php");
                         <div class="item">
                             <div class="main-block tour-block">
                                 <div class="main-img">
-                                    <a href="#"><img src="images/tour-3.jpg" class="img-responsive" alt="tour-img" /></a>
+                                    <a href="#"><img src="images/rutas/ruta-8.jpg" class="img-responsive" alt="tour-img" /></a>
                                 </div>
                                 <!-- end offer-img -->
                                 <div class="offer-price-2">
                                     <ul class="list-unstyled">
-                                        <li class="price">$459.00<a href="#"><span class="arrow"><i
+                                        <li class="price">S/100.00<a href="#"><span class="arrow"><i
                                                         class="fa fa-angle-right"></i></span></a></li>
                                     </ul>
                                 </div>
                                 <!-- end offer-price-2 -->
                                 <div class="main-info tour-info">
-                                    <div class="main-title tour-title"><a href="#">Paris City Tour</a>
-                                        <p>From: Paris</p>
-                                        <div class="rating"><span><i class="fa fa-star orange"></i></span><span><i
-                                                    class="fa fa-star orange"></i></span><span><i
-                                                    class="fa fa-star orange"></i></span><span><i
-                                                    class="fa fa-star orange"></i></span><span><i
-                                                    class="fa fa-star grey"></i></span></div>
-                                    </div>
-                                    <!-- end tour-title -->
-                                </div>
-                                <!-- end tour-info -->
-                            </div>
-                            <!-- end tour-block -->
-                        </div>
-                        <!-- end item -->
-                        <div class="item">
-                            <div class="main-block tour-block">
-                                <div class="main-img">
-                                    <a href="#"><img src="images/tour-4.jpg" class="img-responsive" alt="tour-img" /></a>
-                                </div>
-                                <!-- end offer-img -->
-                                <div class="offer-price-2">
-                                    <ul class="list-unstyled">
-                                        <li class="price">$745.00<a href="#"><span class="arrow"><i
-                                                        class="fa fa-angle-right"></i></span></a></li>
-                                    </ul>
-                                </div>
-                                <!-- end offer-price-2 -->
-                                <div class="main-info tour-info">
-                                    <div class="main-title tour-title"><a href="#">China Temple Tour</a>
-                                        <p>From: China</p>
+                                    <div class="main-title tour-title"><a href="#">Ica</a>
+                                        <p>De: Lima</p>
                                         <div class="rating"><span><i class="fa fa-star orange"></i></span><span><i
                                                     class="fa fa-star orange"></i></span><span><i
                                                     class="fa fa-star orange"></i></span><span><i
@@ -857,7 +856,7 @@ include("./base_datos/db.php");
                         <!-- end item -->
                     </div>
                     <!-- end owl-tour-offers -->
-                    <div class="view-all text-center"><a href="#" class="btn btn-orange">Ver mejores rutas!</a></div>
+                    <div class="view-all text-center"><a href="rutas.html+" class="btn btn-orange">Ver mejores rutas!</a></div>
                     <!-- end view-all -->
                 </div>
                 <!-- end columns -->

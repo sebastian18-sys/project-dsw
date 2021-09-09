@@ -310,7 +310,7 @@
         <div class="container">
             <!-- MAP -->
             <div class="map-container">
-                <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4161.80163925117!2d-77.76288986202329!3d-10.748166204393772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910737e8afa3cd4f%3A0x8c5a7a04231fd6ac!2sCl%C3%ADnica%20Medilab!5e0!3m2!1sen!2spe!4v1628400803251!5m2!1sen!2spe"></iframe>
+                <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15601.478806805706!2d-76.9926917!3d-12.1552144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b846d1a192ed%3A0xf79af35aaf7d4569!2sGround%20Terminal%20Atocongo!5e0!3m2!1sen!2spe!4v1631200874973!5m2!1sen!2spe"></iframe>
                 <a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibujar radio en el mapa</a>
             </div>
 
@@ -321,19 +321,19 @@
                         <div class="address">
                             <i class="fa fa-map-marker"></i>
                             <h4>Dirección:</h4>
-                            <p>Jr. Ramon Castilla 455, Barranca 15169</p>
+                            <p>Av. Panamericana Sur km 11300, San Juan de Miraflores, 15056</p>                            
                         </div>
 
                         <div class="email">
                             <i class="fa fa-envelope"></i>
                             <h4>Correo:</h4>
-                            <p>contacto@clinicamedilab.com</p>
+                            <p>contacto@Wiñaymarca.com</p>
                         </div>
 
                         <div class="phone">
                             <i class="fa fa-phone"></i>
                             <h4>Teléfono:</h4>
-                            <p>(01) 5891260</p>
+                            <p>(51) 986 699 336</p>
                         </div>
                     </div>
                 </div>
@@ -367,14 +367,14 @@
                                             <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
                                             <span><i class="fa fa-pencil"></i></span>
                                         </div>
-                                        <!-- SEND -->
+                                        <!-- SEND 
                                         <div class="my-3">
                                             <div class="loading">Loading</div>
                                             <div class="error-message"></div>
                                             <div class="sent-message">
                                                 Your message has been sent. Thank you!
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <input type="submit" value="Enviar" name="enviar-mensaje" class="btn btn-orange btn-block">
                                     </form>
                                 </div>
