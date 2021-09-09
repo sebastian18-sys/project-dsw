@@ -1,9 +1,9 @@
 <?php 
-session_start();
+// session_start();
 include("../../base_datos/db.php");
 
 //validamos si existe el nombre.. y el pass
-if(isset($_POST["registrar-chofer"])) {
+if(isset($_POST['registrar-chofer'])) {
 
     $id_choferSql="SELECT count(*) as id from chofer";
     $result=mysqli_query($link, $id_choferSql);
@@ -13,15 +13,19 @@ if(isset($_POST["registrar-chofer"])) {
     $sexo=$_POST['sexo-chofer'];
     $edad=$_POST['edad-chofer'];
     $num=$_POST['telefono-chofer'];
-    $sql="INSERT INTO chofer values ($id_chofer,'$nombre','$sexo',$edad,'$num')";
+    $sql="INSERT INTO chofer values ($id_chofer,'$nombre','$sexo',$edad,  '$num')";
     $resultado=mysqli_query($link, $sql);
-    if($resultado){
+    if(!$resultado){
 
-    header("Location: ./panel_principal.php");
-
+        die("Query Failed.");
+        echo "ERROR EN INSERTAR CHOFER"; 
+        echo $id_chofer;
+        echo $nombre;
+        echo $sexo;
+        echo $edad;
 
     }else{
-        echo "ERROR EN INSERTAR CHOFER"; 
+        header("Location: ./panel_principal.php");
     }
 }
 ?>

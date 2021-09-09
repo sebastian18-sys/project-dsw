@@ -237,7 +237,7 @@ $fechafinal= $_SESSION['fecha'];
                                         <p><?php echo $correofinal ?></p>
                                     </div>
                                     <div class="text-datos">
-                                        <p>DNI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p>Card holder:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                         <p><?php echo $cardfinal ?></p>
                                     </div>
                                     <div class="text-datos">

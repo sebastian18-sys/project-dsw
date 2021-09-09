@@ -30,16 +30,16 @@
                         <div class="input-group"><input type="text" class="form-control" placeholder="Search..." required /><span class="input-group-btn"><button type="submit" class="btn"><span><i class="fa fa-search"></i></span></button>
                             </span>
                         </div>
-                        <!-- end input-group -->
+                   
                     </div>
-                    <!-- end form-group -->
+                
                 </form>
             </div>
-            <!-- end form-center -->
+      
         </div>
-        <!-- end overlay-content -->
+   
     </div>
-    <!-- end overlay -->
+
 
     <nav class="navbar navbar-default main-navbar navbar-custom navbar-white" id="mynavbar-1">
         <div class="container">
@@ -140,7 +140,7 @@
                     </li>
                     
                     <!-- <li><a href="javascript:void(0)" class="search-button"><span><i class="fa fa-search"></i></span></a></li> -->
-                    <li><a href="javascript:void(0)" class="search-button"><span>
+                    <li><a href="./covid-19.php" class="search-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
@@ -316,6 +316,8 @@
     <!-- Page Scripts Starts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/custom-owl.js"></script>
     <script src="js/custom-navigation.js"></script>
     <!-- Page Scripts Ends -->
 </body>

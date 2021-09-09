@@ -101,7 +101,7 @@
                             <li><a href="./rutas.html">Rutas</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="./faq.html" class="dropdown-toggle">Ayuda
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->

@@ -358,7 +358,7 @@ include("./base_datos/db.php");
                                                 </div>
                                                 <!-- end columns -->
                                                 
-                                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+                                                <!-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
                                                     <div class="form-group right-icon">
                                                         <select class="form-control">
                                                             <option selected>Pasajeros</option>
@@ -367,9 +367,10 @@ include("./base_datos/db.php");
                                                             <option>3</option>
                                                             <option>4</option>
                                                             <option>5</option>
+                                                            
                                                         </select><i class="fa fa-angle-down"></i>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <!-- end columns -->
                                             </div>
                                             <!-- end row -->

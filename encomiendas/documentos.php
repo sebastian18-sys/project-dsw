@@ -238,7 +238,7 @@ include("../base_datos/db.php");
 
     <div class="sidenav-content">
         <div id="mySidenav" class="sidenav">
-            <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Wiñaymarca</h2>
+            <h2 id="web-name"><span><i class="fa fa-bus"></i></span>Wiñaymarca</h2>
             <div id="main-menu">
                 <div class="closebtn">
                     <button class="btn btn-default" id="closebtn">&times;</button>
@@ -343,7 +343,7 @@ include("../base_datos/db.php");
                                                         $tabla = mysqli_query($link, "SELECT DISTINCT ciudad FROM agencias ORDER BY ciudad");
 
                                                         ?>
-                                                        <select name="origen_encomienda" class="form-control-dates" id="origen">
+                                                        <select name="origen_encomienda" class="form-control-dates" id="origen" required>
                                                             <option value="-1">Origen</option>
                                                             <?php
                                                             //recorremos la tabla en busca de los registros
@@ -370,7 +370,7 @@ include("../base_datos/db.php");
                                                         //Creamos la consulta SQL
                                                         $tabla = mysqli_query($link, "select distinct ciudad from agencias order by ciudad");
                                                         ?>
-                                                        <select name="destino_encomienda" class="form-control-dates" id="destino">
+                                                        <select name="destino_encomienda" class="form-control-dates" id="destino" required>
                                                             <option value="-1">Destino</option>
                                                             <?php
                                                             //recorremos los registros
@@ -393,7 +393,7 @@ include("../base_datos/db.php");
                                                     <label>Fecha:</label>
                                                     <div class="group">
                                                     <i class="fa fa-calendar"></i>
-                                                        <input type="text" autocomplete="off" class="form-control-dates dpd1" name="fecha_encomienda" placeholder="Fecha">
+                                                        <input type="text" autocomplete="off" class="form-control-dates dpd1" name="fecha_encomienda" placeholder="Fecha" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -434,7 +434,7 @@ include("../base_datos/db.php");
                                                     <label>Nombre:</label>
                                                     <div class="group">
                                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                                        <input type="text" name="nombre-destinatario" class="form-control-dates" placeholder="Nombre">
+                                                        <input type="text" name="nombre-destinatario" class="form-control-dates" placeholder="Nombre" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -443,7 +443,7 @@ include("../base_datos/db.php");
                                                     <label>Apellidos:</label>
                                                     <div class="group">
                                                         <i class="fa fa-user" aria-hidden="true"></i>
-                                                        <input type="text" name="apellido-destinatario" class="form-control-dates" placeholder="Apellido">
+                                                        <input type="text" name="apellido-destinatario" class="form-control-dates" placeholder="Apellido" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -452,7 +452,7 @@ include("../base_datos/db.php");
                                                     <label>DNI:</label>
                                                     <div class="group">
                                                         <i class="fa fa-id-card" aria-hidden="true"></i>
-                                                        <input type="text" name="dni-destinatario" class="form-control-dates" placeholder="DNI">
+                                                        <input type="text" name="dni-destinatario" class="form-control-dates" placeholder="DNI" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -461,7 +461,7 @@ include("../base_datos/db.php");
                                                     <label>Telefono:</label>
                                                     <div class="group">
                                                         <i class="fa fa-phone" aria-hidden="true"></i>
-                                                        <input type="text" name="celular-destinatario" class="form-control-dates" placeholder="Celular">
+                                                        <input type="text" name="celular-destinatario" class="form-control-dates" placeholder="Celular" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -469,7 +469,7 @@ include("../base_datos/db.php");
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <div class="group">
-                                                        <input type="hidden" name="valor-encomienda" value="documento">
+                                                        <input type="hidden" name="valor-encomienda" value="documento" required>
                                                     </div>
                                                 </div>
                                             </div>

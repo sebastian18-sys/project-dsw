@@ -80,8 +80,8 @@ include("../../base_datos/db.php");
                                                         <div class="group">
                                                             <i class="fa fa-user" aria-hidden="true"></i>
                                                             <select name="sexo-chofer" class="form-control-dates" id="">
-                                                                <option value="">Masculino</option>
-                                                                <option value="">Femenino</option>
+                                                                <option>Masculino</option>
+                                                                <option>Femenino</option>
                                                             </select>
                                                         </div>
                                                     </div>

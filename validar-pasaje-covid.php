@@ -14,11 +14,16 @@ include("base_datos/db.php");
         $query = "SELECT * FROM `boletos` WHERE `codigo_boleto` = '$boleto'";
         $result = mysqli_query($link, $query);
 
+        while($row = mysqli_fetch_assoc($result)) { 
+
+            $_SESSION['name'] = $row['nombrePasajero'];
+            $_SESSION['lastname'] = $row['apellidoPasajero'];
+            $_SESSION['email'] = $row['correoPasajero'];
+    
+        }
+
         if($result) {
-            $_SESSION['dni'] = $dni;
-            $_SESSION['cod-boleto'] = $boleto;
-            $_SESSION['name'] = $nombre;
-            $_SESSION['lastname'] = $apellidos;
+
             header("Location: covid-form.php");
             // echo "entro";
         } else {
