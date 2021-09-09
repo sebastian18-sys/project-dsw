@@ -16,13 +16,8 @@ if(isset($_POST['registrar-chofer'])) {
     $sql="INSERT INTO chofer values ($id_chofer,'$nombre','$sexo',$edad,  '$num')";
     $resultado=mysqli_query($link, $sql);
     if(!$resultado){
-
-        die("Query Failed.");
+        
         echo "ERROR EN INSERTAR CHOFER"; 
-        echo $id_chofer;
-        echo $nombre;
-        echo $sexo;
-        echo $edad;
 
     }else{
         header("Location: ./panel_principal.php");
