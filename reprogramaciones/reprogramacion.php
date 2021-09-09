@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("base_datos/db.php");
+include("../base_datos/db.php");
 
     $id_boleto = $_SESSION['boleto-changes'];
 
@@ -22,18 +22,24 @@ include("base_datos/db.php");
     <title>Covid-19</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="images/icon-web.png" />
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
     <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" id="cpswitch" href="css/orange.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" id="cpswitch" href="../css/orange.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
+
+    <!--Date-Picker Stylesheet-->
+    <link rel="stylesheet" href="../css/datepicker.css">
+    <!-- Magnific Gallery -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+
 </head>
 
 <body>
@@ -76,7 +82,7 @@ include("base_datos/db.php");
                     <!-- <a href="javascript:void(0)" class="search-button">
                                 <span><i class="fa fa-search"></i></span>
                             </a> -->
-                    <a href="./covid-19.html" class="covid-button"><span>
+                    <a href="../covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                             Covid-19
                         </span>
@@ -97,7 +103,7 @@ include("base_datos/db.php");
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./about-us.html" class="dropdown-toggle">Nosotros
+                        <a href="../about-us.html" class="dropdown-toggle">Nosotros
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
@@ -122,21 +128,21 @@ include("base_datos/db.php");
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="./faq.html" class="dropdown-toggle">Ayuda
+                        <a href="../faq.html" class="dropdown-toggle">Ayuda
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./contact-us.html" class="dropdown-toggle">Contacto
+                        <a href="../contact-us.html" class="dropdown-toggle">Contacto
                             <span>
                             <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href="./covid-19.php" class="search-button"><span> Covid-19 </span></a>
+                        <a href="../covid-19.php" class="search-button"><span> Covid-19 </span></a>
                     </li>
                 </ul>
             </div>
@@ -155,11 +161,11 @@ include("base_datos/db.php");
                     <button class="btn btn-default" id="closebtn">&times;</button>
                 </div>
                 <div class="list-group panel">
-                    <a href="./index.html" class="list-group-item active" data-parent="#main-menu">
+                    <a href="../index.php" class="list-group-item active" data-parent="#main-menu">
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
-                    <a href="./about-us.html" class="list-group-item" data-parent="#main-menu">
+                    <a href="../about-us.html" class="list-group-item" data-parent="#main-menu">
                         <span><i class="fa fa-plane link-icon"></i></span>Nosotros
                     </a>
 
@@ -177,15 +183,15 @@ include("base_datos/db.php");
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
-                        <a href="./destinations.html" class="list-group-item">Destinos</a>
+                        <a href="../destinations.html" class="list-group-item">Destinos</a>
                         <a href="tour-listing-left-sidebar.html" class="list-group-item">Rutas</a>
                     </div>
 
-                    <a href="./faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-ship link-icon"></i></span>Ayuda
                     </a>
 
-                    <a href="./contact-us.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-car link-icon"></i></span>Contacto
                     </a>
                 </div>
@@ -257,7 +263,7 @@ include("base_datos/db.php");
                                             </div>
                                             <div class="container-dates">
                                                 <div class="container-dates__form-covid col-lg-8">
-                                                    <form action="">
+                                                    <form action="validar_fecha_cambio.php" method = "POST">
                                                         <div class="form-head col-lg-12">
                                                             <h4>Nuevo horario</h4>
                                                             <hr>
@@ -272,8 +278,8 @@ include("base_datos/db.php");
                                                         </div>
 
                                                         <div class="button-container col-sm-12">
-                                                            <Input class="next-button" name="Registrar_Formulario" Type="submit" value="Buscar viajes">
-                                                            <a href="./covid-19.php"> <input class="back-button" type="button" value="Volver"> </a>
+                                                            <input type="submit" name="Registrar_Fecha_Cambio" value="Siguiente" class="btn-orange-next">
+                                                            <a href="../covid-19.php"> <input class="back-button" type="button" value="Volver"> </a>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -283,7 +289,7 @@ include("base_datos/db.php");
                                     </div>
                                     <!-- end form-content -->
                                 </div>
-                                </form>
+                                
                             </div>
                             <!-- end custom-form -->
                         </div>
@@ -310,16 +316,16 @@ include("base_datos/db.php");
                     <div class="list-container">
                         <div class="list__item">
                             <div class="list__item__img">
-                                <img src="./images/payment-1.png" alt="master-card" />
+                                <img src="../images/payment-1.png" alt="master-card" />
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-2.png" alt="master-card" />
+                                <img src="../images/payment-2.png" alt="master-card" />
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-3.png" alt="master-card" />
+                                <img src="../images/payment-3.png" alt="master-card" />
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-4.png" alt="master-card" />
+                                <img src="../images/payment-4.png" alt="master-card" />
                             </div>
                         </div>
                     </div>
@@ -416,9 +422,21 @@ include("base_datos/db.php");
     </section>
     <!-- end footer -->
     <!-- Page Scripts Starts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom-navigation.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/custom-navigation.js"></script>
+
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+
+    <script src="../js/jquery.flexslider.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+  
+    <script src="../js/custom-flex.js"></script>
+    <script src="../js/custom-owl.js"></script>
+    <script src="../js/custom-date-picker.js"></script>
+    <script src="../js/custom-video.js"></script>
+    <script src="../js/util.js"></script>
     <!-- Page Scripts Ends -->
 </body>
 

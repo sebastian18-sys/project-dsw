@@ -1,59 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <title>Covid-19</title>
+    <title>Reprogramaciones</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="images/icon-web.png" />
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i"
       rel="stylesheet"
     />
     <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" id="cpswitch" href="css/orange.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" id="cpswitch" href="../css/orange.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
   </head>
 
   <body>
     <!--====== LOADER =====-->
     <div class="loader"></div>
-    <!--======== SEARCH-OVERLAY =========-->
-    <div class="overlay">
-      <a href="javascript:void(0)" id="close-button" class="closebtn"
-        >&times;</a
-      >
-      <div class="overlay-content">
-        <div class="form-center">
-          <form>
-            <div class="form-group">
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Search..."
-                  required
-                /><span class="input-group-btn"
-                  ><button type="submit" class="btn">
-                    <span><i class="fa fa-search"></i></span>
-                  </button>
-                </span>
-              </div>
-              <!-- end input-group -->
-            </div>
-            <!-- end form-group -->
-          </form>
-        </div>
-        <!-- end form-center -->
-      </div>
-      <!-- end overlay-content -->
-    </div>
-    <!-- end overlay -->
+   
+      
 
     <nav
       class="navbar navbar-default main-navbar navbar-custom navbar-white"
@@ -70,7 +41,7 @@
             <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-            <a href="./covid-19.html" class="covid-button"
+            <a href="../covid-19.php" class="covid-button"
               ><span>
                 <!-- <i class="fa fa-search"></i> -->
                 Covid-19
@@ -85,7 +56,7 @@
         <div class="collapse navbar-collapse" id="myNavbar1">
           <ul class="nav navbar-nav navbar-right navbar-search-link">
             <li class="dropdown">
-              <a href="./index.html" class="dropdown-toggle"
+              <a href="../index.php" class="dropdown-toggle"
                 >Inicio
                 <span>
                   <!-- <i class="fa fa-angle-down"></i> -->
@@ -93,7 +64,7 @@
               </a>
             </li>
             <li class="dropdown">
-              <a href="./about-us.html" class="dropdown-toggle"
+              <a href="../about-us.html" class="dropdown-toggle"
                 >Nosotros
                 <span>
                   <!-- <i class="fa fa-angle-down"></i> -->
@@ -108,8 +79,8 @@
                 </span>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="hotel-homepage.html">Encomiendas</a></li>
-                <li><a href="hotel-listing-left-sidebar.html">Mudanzas</a></li>
+                <li><a href="../encomiendas/encomiendas.php">Encomiendas</a></li>
+                
               </ul>
             </li>
             <li class="dropdown">
@@ -117,12 +88,12 @@
                 >Trayectos<span><i class="fa fa-angle-down"></i></span
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="./destinations.html">Destinos</a></li>
+                <li><a href="../destinations.html">Destinos</a></li>
                 <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
               </ul>
             </li>
             <li class="dropdown active">
-              <a href="./faq.html" class="dropdown-toggle"
+              <a href="../faq.html" class="dropdown-toggle"
                 >Ayuda
                 <span>
                   <!-- <i class="fa fa-angle-down"></i> -->
@@ -130,7 +101,7 @@
               </a>
             </li>
             <li class="dropdown">
-              <a href="./contact-us.html" class="dropdown-toggle"
+              <a href="../contact-us.php" class="dropdown-toggle"
                 >Contacto
                 <span>
                   <!-- <i class="fa fa-angle-down"></i> -->
@@ -138,7 +109,7 @@
               </a>
             </li>
             <li>
-              <a href="./covid-19.html" class="search-button"
+              <a href="../covid-19.php" class="search-button"
                 ><span> Covid-19 </span>
               </a>
             </li>
@@ -199,7 +170,7 @@
               <span><i class="fa fa-chevron-down arrow"></i></span>
             </a>
             <div class="collapse sub-menu" id="tours-links">
-              <a href="./destinations.html" class="list-group-item">Destinos</a>
+              <a href="../destinations.html" class="list-group-item">Destinos</a>
               <a href="tour-listing-left-sidebar.html" class="list-group-item"
                 >Rutas</a
               >
@@ -215,7 +186,7 @@
             </a>
 
             <a
-              href="./contact-us.html"
+              href="../contact-us.php"
               class="list-group-item"
               data-toggle="collapse"
               data-parent="#main-menu"
@@ -234,7 +205,7 @@
           <div class="col-sm-12">
             <h1 class="page-title">¡A Viajar Seguro!</h1>
             <ul class="breadcrumb">
-              <li><a href="./index.html">Inicio</a></li>
+              <li><a href="../index.php">Inicio</a></li>
               <li class="active">Covid-19</li>
             </ul>
           </div>
@@ -265,30 +236,30 @@
                   <h3>Ingresa tus datos aquí</h3>
                   <!-- <p>When you fill in your registered email address, you will be sent instructions on how to reset your password.</p> -->
                   <form class="form-covid" action="validar-busqueda-viaje.php" method="POST">
-                                    <div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                                            <input type="text" class="form-control-dates" placeholder="DNI" name="dni-changes" required/>
-                                            <span>
-                                                <i class="fa fa-id-card" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                                            <input type="text" class="form-control-dates" placeholder="Código de reserva" name="cod-reserva-changes" required/>
-                                            <span>
-                                                <i class="fa fa-ticket" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
+                    <div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                            <input type="text" class="form-control-dates" placeholder="DNI" name="dni-changes" required/>
+                            <span>
+                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                            <input type="text" class="form-control-dates" placeholder="Código de reserva" name="cod-reserva-changes" required/>
+                            <span>
+                                <i class="fa fa-ticket" aria-hidden="true"></i>
+                            </span>
+                        </div>
 
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info-changes">
-                                        <p>Ingresa estos datos tal cual están en <strong>tu boleto</strong></p>
-                                    </div>
-                                    <input type="submit" name="validar-busqueda-viaje" value="Siguiente" class="btn-orange-next">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 back-button-changes">
-                                        <a href="./faq.html"><input type="button" class="btn-orange-back" value="Volver"></a>
-                                    </div>
-                            
-                                </form>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info-changes">
+                        <p>Ingresa estos datos tal cual están en <strong>tu boleto</strong></p>
+                    </div>
+                    <input type="submit" name="validar-busqueda-viaje" value="Siguiente" class="btn-orange-next">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 back-button-changes">
+                        <a href="../faq.html"><input type="button" class="btn-orange-back" value="Volver"></a>
+                    </div>
+            
+                  </form>
                 </div>
                 <!-- end custom-form -->
               </div>
@@ -315,16 +286,16 @@
             <div class="list-container">
               <div class="list__item">
                 <div class="list__item__img">
-                  <img src="./images/payment-1.png" alt="master-card" />
+                  <img src="../images/payment-1.png" alt="master-card" />
                 </div>
                 <div class="list__item__img">
-                  <img src="./images/payment-2.png" alt="master-card" />
+                  <img src="../images/payment-2.png" alt="master-card" />
                 </div>
                 <div class="list__item__img">
-                  <img src="./images/payment-3.png" alt="master-card" />
+                  <img src="../images/payment-3.png" alt="master-card" />
                 </div>
                 <div class="list__item__img">
-                  <img src="./images/payment-4.png" alt="master-card" />
+                  <img src="../images/payment-4.png" alt="master-card" />
                 </div>
               </div>
             </div>
@@ -467,9 +438,9 @@
     </section>
     <!-- end footer -->
     <!-- Page Scripts Starts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom-navigation.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/custom-navigation.js"></script>
     <!-- Page Scripts Ends -->
   </body>
 </html>
