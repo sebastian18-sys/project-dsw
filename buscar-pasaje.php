@@ -15,7 +15,7 @@ $date = $_SESSION['fecha'];
     <title>Buscar pasaje</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -66,13 +66,13 @@ $date = $_SESSION['fecha'];
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.html" class="covid-button"><span>
+                    <a href="./covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
                     </a>
                 </div>
-                <a href="#" class="navbar-brand">
+                <a href="./index.php" class="navbar-brand">
                     <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
@@ -100,15 +100,14 @@ $date = $_SESSION['fecha'];
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Encomiendas</a></li>
-                            <li><a href="#">Mudanzas</a></li>
+                            <li><a href="./encomiendas/encomiendas.php">Encomiendas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i
                                     class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="#">Rutas</a></li>
+                            <li><a href="./rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -124,7 +123,7 @@ $date = $_SESSION['fecha'];
                             </span>
                         </a>
                     </li>
-                    <li><a href="./covid-19.html" class="search-button"><span>
+                    <li><a href="./covid-19.php" class="search-button"><span>
                         Covid-19
                     </span>
                     </a></li>
@@ -137,18 +136,18 @@ $date = $_SESSION['fecha'];
     <!-- end navbar -->
     <div class="sidenav-content">
         <div id="mySidenav" class="sidenav">
-            <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Wiñaymarca</h2>
+            <h2 id="web-name"><span><i class="fa fa-bus"></i></span>Wiñaymarca</h2>
             <div id="main-menu">
                 <div class="closebtn">
                     <button class="btn btn-default" id="closebtn">&times;</button>
                 </div>
                 <div class="list-group panel">
-                    <a href="./index.html" class="list-group-item active" data-parent="#main-menu">
+                    <a href="./index.php" class="list-group-item active" data-parent="#main-menu">
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
                     <a href="./about-us.html" class="list-group-item" data-parent="#main-menu">
-                        <span><i class="fa fa-plane link-icon"></i></span>Nosotros
+                        <span><i class="fa fa-bus link-icon"></i></span>Nosotros
                     </a>
 
                     <a href="#hotels-links" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
@@ -156,8 +155,7 @@ $date = $_SESSION['fecha'];
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="" class="list-group-item">Encomiendas</a>
-                        <a href="" class="list-group-item">Mudanzas</a>
+                        <a href="./encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
                     </div>
 
 
@@ -167,14 +165,14 @@ $date = $_SESSION['fecha'];
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
                         <a href="./destinations.html" class="list-group-item">Destinos</a>
-                        <a href="tour-listing-left-sidebar.html" class="list-group-item">Rutas</a>
+                        <a href="./rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
                     <a href="./faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-ship link-icon"></i></span>Ayuda
                     </a>
 
-                    <a href="./contact-us.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="./contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-car link-icon"></i></span>Contacto
                     </a>
                 </div>

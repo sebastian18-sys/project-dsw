@@ -18,7 +18,7 @@ $date = $_SESSION['fecha'];
     <title>Buscar pasaje</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -191,7 +191,7 @@ if(isset($_POST['pasaje-bus'])) {
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.html" class="covid-button"><span>
+                    <a href="./covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
@@ -225,15 +225,14 @@ if(isset($_POST['pasaje-bus'])) {
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Encomiendas</a></li>
-                            <li><a href="#">Mudanzas</a></li>
+                            <li><a href="./encomiendas/encomiendas.php">Encomiendas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i
                                     class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="#">Rutas</a></li>
+                            <li><a href="./rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -249,7 +248,7 @@ if(isset($_POST['pasaje-bus'])) {
                             </span>
                         </a>
                     </li>
-                    <li><a href="./covid-19.html" class="search-button"><span>
+                    <li><a href="./covid-19.php" class="search-button"><span>
                         Covid-19
                     </span>
                     </a></li>
@@ -262,13 +261,13 @@ if(isset($_POST['pasaje-bus'])) {
     <!-- end navbar -->
     <div class="sidenav-content">
         <div id="mySidenav" class="sidenav">
-            <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Wiñaymarca</h2>
+            <h2 id="web-name"><span><i class="fa fa-bus"></i></span>Wiñaymarca</h2>
             <div id="main-menu">
                 <div class="closebtn">
                     <button class="btn btn-default" id="closebtn">&times;</button>
                 </div>
                 <div class="list-group panel">
-                    <a href="./index.html" class="list-group-item active" data-parent="#main-menu">
+                    <a href="./index.php" class="list-group-item active" data-parent="#main-menu">
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
@@ -281,8 +280,7 @@ if(isset($_POST['pasaje-bus'])) {
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="" class="list-group-item">Encomiendas</a>
-                        <a href="" class="list-group-item">Mudanzas</a>
+                        <a href="./encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
                     </div>
 
 
@@ -292,14 +290,14 @@ if(isset($_POST['pasaje-bus'])) {
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
                         <a href="./destinations.html" class="list-group-item">Destinos</a>
-                        <a href="tour-listing-left-sidebar.html" class="list-group-item">Rutas</a>
+                        <a href="./rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
                     <a href="./faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-ship link-icon"></i></span>Ayuda
                     </a>
 
-                    <a href="./contact-us.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="./contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-car link-icon"></i></span>Contacto
                     </a>
                 </div>
@@ -429,7 +427,7 @@ if(isset($_POST['pasaje-bus'])) {
                                             ?>
                                         </select>
                                         <br />
-                                        <table id="carrito" cellspacing="0" cellpadding="0">
+                                        <table id="carrito" class="carro-container" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <td rowspan="5">
                                                 <img src="./images/asientos2/bus_top.png"/>
@@ -550,15 +548,15 @@ if(isset($_POST['pasaje-bus'])) {
                                                     </td>
                                                 </tr>
                                             </table> -->
-                                            <input type="hidden" id="num_bol_selec" value="0" />
-                                            <input type="hidden" id="bolsMax" value="0" />
-                                            <input type="hidden" id="id_corrida" value="<?php echo $seleccionado; ?>" />
+                                        <input type="hidden" id="num_bol_selec" value="0" />
+                                        <input type="hidden" id="bolsMax" value="0" />
+                                        <input type="hidden" id="id_corrida" value="<?php echo $seleccionado; ?>" />
                                         
                                         <div class="button-container col-lg-12">
-                                      
+                                            
                                             <input type="submit" name="comprar-asiento" id="continuar" onclick="Util.avanzar();" class="btn btn-orange" value="Siguiente">
                                     
-                                            <a href="./buscar-pasaje.php"> <input class="back-button" type="button" value="Regresar"> </a>
+                                            <a href="./buscar-pasaje.php"> <input class="back-button" type="button" value="REGRESAR"> </a>
 
                                             
                                         </div>

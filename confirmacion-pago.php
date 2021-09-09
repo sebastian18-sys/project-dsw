@@ -78,8 +78,8 @@ $fechafinal= $_SESSION['fecha'];
                     </span>
                     </a>
                 </div>
-                <a href="#" class="navbar-brand">
-                    <span><i class="fa fa-plane"></i>WIÑAY</span>MARCA
+                <a href="./index.php" class="navbar-brand">
+                    <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
             <!-- end navbar-header -->
@@ -107,14 +107,13 @@ $fechafinal= $_SESSION['fecha'];
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="hotel-homepage.html">Encomiendas</a></li>
-                            <li><a href="hotel-listing-left-sidebar.html">Mudanzas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i
                                     class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
+                            <li><a href="./rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -125,7 +124,7 @@ $fechafinal= $_SESSION['fecha'];
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./contact-us.html" class="dropdown-toggle">Contacto
+                        <a href="./contact-us.php" class="dropdown-toggle">Contacto
                             <span>
                             </span>
                         </a>
@@ -162,8 +161,7 @@ $fechafinal= $_SESSION['fecha'];
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="" class="list-group-item">Encomiendas</a>
-                        <a href="" class="list-group-item">Mudanzas</a>
+                        <a href="" class="./encomiendas/encomiendas.php">Encomiendas</a>
                     </div>
 
 
@@ -173,7 +171,7 @@ $fechafinal= $_SESSION['fecha'];
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
                         <a href="./destinations.html" class="list-group-item">Destinos</a>
-                        <a href="tour-listing-left-sidebar.html" class="list-group-item">Rutas</a>
+                        <a href="./rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
                     <a href="./faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
