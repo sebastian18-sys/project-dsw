@@ -1,14 +1,17 @@
 <?php
 session_start();
-include("base_datos/db.php");
+// error_reporting(0);
+include("../base_datos/db.php");
 ?>
 
 <?php
 
+    $dni = $_POST['dni-changes'];
+    $boleto = $_POST['cod-reserva-changes']; 
+
     if(isset($_POST['validar-pasaje'])) {
 
-        $dni = $_POST['dni-changes'];
-        $boleto = $_POST['cod-reserva-changes']; 
+
         
         $_SESSION['boleto-changes'] = $boleto;
 
@@ -37,5 +40,6 @@ include("base_datos/db.php");
         }
 
     }
+    // session_destroy();
 
 ?>

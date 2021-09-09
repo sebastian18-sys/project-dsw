@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("base_datos/db.php");
+include("../base_datos/db.php");
 
 $count = $_SESSION['number'];
 

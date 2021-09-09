@@ -12,7 +12,7 @@ include("../base_datos/db.php");
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -59,7 +59,7 @@ include("../base_datos/db.php");
                     </a>
                 </div>
                 <!-- cCAMBIOS -->
-                <a href="#" class="navbar-brand">
+                <a href="../index.php" class="navbar-brand">
                     <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
                 <!-- -------- -->
@@ -106,8 +106,7 @@ include("../base_datos/db.php");
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="encomiendas/encomiendas.php">Encomiendas</a></li>
-                            <li><a href="hotel-listing-left-sidebar.html">Mudanzas</a></li>
+                            <li class="active"><a href="./encomiendas.php">Encomiendas</a></li>
                             <!-- <li><a href="hotel-listing-right-sidebar.html">List View Right Sidebar</a></li>
                             <li><a href="hotel-grid-left-sidebar.html">Grid View Left Sidebar</a></li>
                             <li><a href="hotel-grid-right-sidebar.html">Grid View Right Sidebar</a></li>
@@ -117,8 +116,8 @@ include("../base_datos/db.php");
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
+                            <li><a href="../destinations.html">Destinos</a></li>
+                            <li><a href="../rutas.html">Rutas</a></li>
                             <!-- <li><a href="tour-listing-right-sidebar.html">List View Right Sidebar</a></li>
                             <li><a href="tour-grid-left-sidebar.html">Grid View Left Sidebar</a></li>
                             <li><a href="tour-grid-right-sidebar.html">Grid View Right Sidebar</a></li>
@@ -239,7 +238,7 @@ include("../base_datos/db.php");
 
     <div class="sidenav-content">
         <div id="mySidenav" class="sidenav">
-            <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Wiñaymarca</h2>
+            <h2 id="web-name"><span><i class="fa fa-bus"></i></span>Wiñaymarca</h2>
             <div id="main-menu">
                 <div class="closebtn">
                     <button class="btn btn-default" id="closebtn">&times;</button>
@@ -249,7 +248,7 @@ include("../base_datos/db.php");
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
-                    <a href="../about-us.php" class="list-group-item" data-parent="#main-menu">
+                    <a href="../about-us.html" class="list-group-item" data-parent="#main-menu">
                         <span><i class="fa fa-plane link-icon"></i></span>Nosotros
                     </a>
 
@@ -258,8 +257,7 @@ include("../base_datos/db.php");
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="" class="list-group-item">Encomiendas</a>
-                        <a href="" class="list-group-item">Mudanzas</a>
+                        <a href="./encomiendas.php" class="list-group-item">Encomiendas</a>
                     </div>
 
 
@@ -269,7 +267,7 @@ include("../base_datos/db.php");
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
                         <a href="../destinations.php" class="list-group-item">Destinos</a>
-                        <a href="tour-listing-left-sidebar.html" class="list-group-item">Rutas</a>
+                        <a href="../rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
                     <a href="../faq.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
@@ -295,7 +293,7 @@ include("../base_datos/db.php");
                 <div class="col-sm-12">
                     <h1 class="page-title">Cargo de postal encomiendas y paqueterias</h1>
                     <ul class="breadcrumb">
-                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="../index.php">Inicio</a></li>
                         <li class="active">Servicios / Encomiendas</li>
                     </ul>
                 </div>

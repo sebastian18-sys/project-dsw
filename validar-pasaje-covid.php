@@ -11,7 +11,7 @@ include("base_datos/db.php");
         $_SESSION['boleto-covid'] = $boleto;
 
 
-        $query = "SELECT * FROM boletos WHERE codigo_boleto = '$boleto'";
+        $query = "SELECT * FROM `boletos` WHERE `codigo_boleto` = '$boleto'";
         $result = mysqli_query($link, $query);
 
         if($result) {
@@ -19,7 +19,8 @@ include("base_datos/db.php");
             $_SESSION['cod-boleto'] = $boleto;
             $_SESSION['name'] = $nombre;
             $_SESSION['lastname'] = $apellidos;
-            header("Location: ./covid-form.php");
+            header("Location: covid-form.php");
+            // echo "entro";
         } else {
             echo "ERROR EN VERIFICAR DECLARACIÓN JURADA";  
         }

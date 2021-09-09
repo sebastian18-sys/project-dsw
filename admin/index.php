@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -56,7 +56,7 @@
                         <span><i class="fa fa-search"></i></span>
                     </a>
                 </div>
-                <a href="#" class="navbar-brand">
+                <a href="../index.php" class="navbar-brand">
                     <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
@@ -84,15 +84,14 @@
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Encomiendas</a></li>
-                            <li><a href="#">Mudanzas</a></li>
+                            <li><a href="../encomiendas/encomiendas.php">Encomiendas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i
                                     class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="../destinations.html">Destinos</a></li>
-                            <li><a href="#">Rutas</a></li>
+                            <li><a href="../rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -108,7 +107,7 @@
                             </span>
                         </a>
                     </li>
-                    <li><a href="../covid-19.html" class="search-button"><span>
+                    <li><a href="../covid-19.php" class="search-button"><span>
                         Covid-19
                     </span>
                     </a></li>

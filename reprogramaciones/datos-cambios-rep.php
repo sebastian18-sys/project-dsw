@@ -48,8 +48,8 @@
               </span>
             </a>
           </div>
-          <a href="#" class="navbar-brand">
-            <span><i class="fa fa-plane"></i>WIÑAY</span>MARCA
+          <a href="../index.php" class="navbar-brand">
+            <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
           </a>
         </div>
         <!-- end navbar-header -->
@@ -89,7 +89,7 @@
               ></a>
               <ul class="dropdown-menu">
                 <li><a href="../destinations.html">Destinos</a></li>
-                <li><a href="tour-listing-left-sidebar.html">Rutas</a></li>
+                <li><a href="../rutas.html">Rutas</a></li>
               </ul>
             </li>
             <li class="dropdown active">
@@ -123,7 +123,7 @@
     <div class="sidenav-content">
       <div id="mySidenav" class="sidenav">
         <h2 id="web-name">
-          <span><i class="fa fa-plane"></i></span>Wiñaymarca
+          <span><i class="fa fa-bus"></i></span>Wiñaymarca
         </h2>
         <div id="main-menu">
           <div class="closebtn">
@@ -131,7 +131,7 @@
           </div>
           <div class="list-group panel">
             <a
-              href="./index.html"
+              href="../index.php"
               class="list-group-item active"
               data-parent="#main-menu"
             >
@@ -139,7 +139,7 @@
             </a>
 
             <a
-              href="./about-us.html"
+              href="../about-us.html"
               class="list-group-item"
               data-parent="#main-menu"
             >
@@ -156,8 +156,7 @@
               <span><i class="fa fa-chevron-down arrow"></i></span>
             </a>
             <div class="collapse sub-menu" id="hotels-links">
-              <a href="" class="list-group-item">Encomiendas</a>
-              <a href="" class="list-group-item">Mudanzas</a>
+              <a href="../encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
             </div>
 
             <a
@@ -171,13 +170,13 @@
             </a>
             <div class="collapse sub-menu" id="tours-links">
               <a href="../destinations.html" class="list-group-item">Destinos</a>
-              <a href="tour-listing-left-sidebar.html" class="list-group-item"
+              <a href="../rutas.html" class="list-group-item"
                 >Rutas</a
               >
             </div>
 
             <a
-              href="./faq.html"
+              href="../faq.html"
               class="list-group-item"
               data-toggle="collapse"
               data-parent="#main-menu"
@@ -238,13 +237,13 @@
                   <form class="form-covid" action="validar-busqueda-viaje.php" method="POST">
                     <div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                            <input type="text" class="form-control-dates" placeholder="DNI" name="dni-changes" required/>
+                            <input autocomplete="off" type="text" class="form-control-dates" placeholder="DNI" name="dni-changes" required/>
                             <span>
                                 <i class="fa fa-id-card" aria-hidden="true"></i>
                             </span>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                            <input type="text" class="form-control-dates" placeholder="Código de reserva" name="cod-reserva-changes" required/>
+                            <input autocomplete="off" type="text" class="form-control-dates" placeholder="Código de reserva" name="cod-reserva-changes" required/>
                             <span>
                                 <i class="fa fa-ticket" aria-hidden="true"></i>
                             </span>
