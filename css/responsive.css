@@ -907,6 +907,7 @@
     .search-tabs .tab-content .tab-pane select,
     .search-tabs .tab-content .tab-pane .btn {
         height: 40px;
+        padding-left: 35px;
     }
     .search-tabs .tab-content .tab-pane .form-group.left-icon .fa {
         top: 12px;
