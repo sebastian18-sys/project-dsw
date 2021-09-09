@@ -16,24 +16,30 @@ include("../base_datos/db.php");
         $query = "SELECT * FROM boletos WHERE codigo_boleto = '$boleto'";
         $result = mysqli_query($link, $query);
 
+        $validacion = 1;    
 
+            while($row = mysqli_fetch_assoc($result)) {
+                
+                if($dni == $row['DNIPasajero'] && $boleto == $row['codigo_boleto']){
 
-            while($row = mysqli_fetch_assoc($result)) { 
                 $_SESSION['ID_ITINERARIO'] = $row['id_itinerario'];
                 $_SESSION['namePasajero'] = $row['nombrePasajero'];
                 $_SESSION['lastnamePasajero'] = $row['apellidoPasajero'];
                 $_SESSION['emailPasajero'] = $row['correoPasajero'];
                 $_SESSION['dniPasajero'] = $row['DNIPasajero'];
+
+                $validacion = 0;
+                }
         
             }
         
 
-        if($result) {
+        if($validacion == 0) {
             
     
             header("Location: ./reprogramacion.php");
         } else {
-            echo "ERROR EN VERIFICAR REPROGRAMACION";  
+            header("Location: ./datos-cambios-rep.php");  
         }
 
     }
