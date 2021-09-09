@@ -1,6 +1,15 @@
 <?php
 session_start();
 include("../base_datos/db.php");
+
+$origen_d = $_SESSION['origen'];
+$destino_d = $_SESSION['destino'];
+$nombre_d = $_SESSION['nombre'];
+$apellido_d = $_SESSION['apellido'];
+$dni_d = $_SESSION['dni'];
+$precio = $_SESSION['precio-encomienda'];
+$fecha_d = $_SESSION['fecha'];
+
 ?>
 
 <!doctype html>
@@ -307,207 +316,67 @@ include("../base_datos/db.php");
     </section>
     <!-- end page-cover -->
     <!--===== INNERPAGE-WRAPPER ====-->
+
     <section class="innerpage-wrapper">
         <div id="flight-listings" class="innerpage-section-padding">
             <div class="container">
                 <div class="row">
 
                     <!-- end columns -->
-                    <!-- <div class="col-xs-12 col-sm-12 col-md-12 content-side">
-                        <h2></h2>
-                        <p>Fecha: </p>
-                        <div class="page-search">
-                            <h4>Ingresa tus <strong>datos</strong></h4>
-                            <hr class="heading-line" />
-                        </div>
-                    </div> -->
-                    <div class="col-xs-12 col-sm-12 col-md-12 content-side">
+                    <div id="boleto" class="col-xs-12 col-sm-12 col-md-12 content-side">
                         <div class="list-block main-block f-list-block">
                             <!-- <div class="container">
                                 <div class="row"> -->
-                            <form action="validar-encomienda.php" method="POST">
-                
-                                        
-                                <div class="container-dates">
-                                    <div class="container-dates__form col-lg-8">
-                                        
-                                            <div class="form-head col-lg-12">
-                                                <h4>Donde quieres mandar tu documento</h4>
-                                                <hr>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Desde:</label>
-                                                    <div class="group">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        <?php
-                                                        //Creamos la consulta SQL
-                                                        $tabla = mysqli_query($link, "SELECT DISTINCT ciudad FROM agencias ORDER BY ciudad");
-
-                                                        ?>
-                                                        <select name="origen_encomienda" class="form-control-dates" id="origen">
-                                                            <option value="-1">Origen</option>
-                                                            <?php
-                                                            //recorremos la tabla en busca de los registros
-                                                            while ($registro = mysqli_fetch_array($tabla)) {
-                                                            ?>
-                                                                <option value="<?php echo $registro[0]; //a�adimos el registro 
-                                                                                ?>"><?php echo $registro[0]; //a�adimos el registro
-                                                                                                                                    ?></option>
-                                                            <?php
-                                                            }
-                                                            //liberamos la tabla del bloqueo..
-                                                            mysqli_free_result($tabla);
-                                                            ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Hasta:</label>
-                                                    <div class="group">
-                                                        <i class="fa fa-map-marker"></i>
-                                                        <?php
-                                                        //Creamos la consulta SQL
-                                                        $tabla = mysqli_query($link, "select distinct ciudad from agencias order by ciudad");
-                                                        ?>
-                                                        <select name="destino_encomienda" class="form-control-dates" id="destino">
-                                                            <option value="-1">Destino</option>
-                                                            <?php
-                                                            //recorremos los registros
-                                                            while ($registro = mysqli_fetch_array($tabla)) {
-                                                            ?>
-                                                                <option value="<?php echo $registro[0]; //a�adimos el valor
-                                                                                ?>"><?php echo $registro[0]; //a�adimos el valor
-                                                                                                                                ?></option>
-                                                            <?php
-                                                            }
-                                                            //liberamos la tabla...
-                                                            mysqli_free_result($tabla);
-                                                            ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">    
-                                                    <label>Fecha:</label>
-                                                    <div class="group">
-                                                    <i class="fa fa-calendar"></i>
-                                                        <input type="text" autocomplete="off" class="form-control-dates dpd1" name="fecha_encomienda" placeholder="Fecha">
-                                                    </div>
-                                                </div>
-                                            </div>
-                    
+                            <div class="container-head">
+                                <h2>Wiñaymarca</h2>
+                            </div>
+                            <div class="container-text">
+                                <div class="text-datos">
+                                    <h3>Hola,&nbsp; </h3>
+                                    <h3>gracias por tu pago</h3>
+                                </div>
+                                <p>Tu envío ha sido exitoso.</p>
+                                <div class="container-monto">
+                                    <h3>Monto Pagado</h3>
+                                    <h2><strong>S/.<?php echo $precio ?></strong></h2>
+                                </div>
+                                <div class="container-monto">
+                                    <h3>Detalles de la operación</h3>
+                                    <div class="text-datos">
+                                        <p>Origen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p><?php echo $origen_d ?></p>
                                     </div>
-                                    
-                                </div>
-
-                                <div class="container-dates">
-                                    <div class="container-dates__form col-lg-8">
-                                            <div class="form-head col-lg-12">
-                                                <h4>Precio</h4>
-                                                <hr>
-                                            </div>
-                                            
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Precio:</label>
-                                                    <div class="group">
-                                                        <i class="fa fa-money" aria-hidden="true"></i>
-                                                        <input id="pesoSeleccionado" type="text" readonly="readonly" name="precio-encomienda" class="form-control-dates" value="12.50">
-                                                    </div>
-                                                </div>
-                                            </div>                 
+                                    <div class="text-datos">
+                                        <p>Destino:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p><?php echo $destino_d ?></p>
                                     </div>
-                                    
-                                </div>
-
-                                <div class="container-dates">
-                                    <div class="container-dates__form col-lg-8">
-                                        
-                                            <div class="form-head col-lg-12">
-                                                <h4>Datos del destinatario</h4>
-                                                <hr>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Nombre:</label>
-                                                    <div class="group">
-                                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                                        <input type="text" name="nombre-destinatario" class="form-control-dates" placeholder="Nombre">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Apellidos:</label>
-                                                    <div class="group">
-                                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                                        <input type="text" name="apellido-destinatario" class="form-control-dates" placeholder="Apellido">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>DNI:</label>
-                                                    <div class="group">
-                                                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                                                        <input type="text" name="dni-destinatario" class="form-control-dates" placeholder="DNI">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Telefono:</label>
-                                                    <div class="group">
-                                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                                        <input type="text" name="celular-destinatario" class="form-control-dates" placeholder="Celular">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <div class="group">
-                                                        <input type="hidden" name="valor-encomienda" value="documento">
-                                                    </div>
-                                                </div>
-                                            </div>
-      
-                    
+                                    <div class="text-datos">
+                                        <p>Fecha:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p><?php echo $fecha_d ?></p>
                                     </div>
-                                    
+                                    <div class="text-datos">
+                                        <p>DNI destinatario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p><?php echo $dni_d ?></p>
+                                    </div>
+                                    <div class="text-datos">
+                                        <p>Nombre destinatario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p><?php echo $nombre_d ?></p>
+                                    </div>
+                                    <div class="text-datos">
+                                        <p>Apellido destinatario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                        <p><?php echo $apellido_d ?></p>
+                                    </div>
                                 </div>
-                                
+                            </div>
 
-                                <div class="button-container col-sm-6">
-                                    <a href="./encomiendas.php"> <input class="back-button" type="button" value="Regresar"> </a>
-                                    
-                                </div>
-                                <div class="button-container col-sm-6">
-                                    <Input class="next-button" name="verificar-encomienda" Type="submit" value="Continuar"> 
-                                </div>
-                                
-                                
-                            </form>
+                            <!-- </div>
+                            </div> -->
+                            <!-- /.box-body -->
+                            <!-- end list-content -->
                         </div>
+                        <div class="view-all text-center"><a href="javascript:void(0);" onclick="Util.imprimirBoleto();">Imprimir Boleto</div>
+                        <div class="view-all text-center"><a href="./index.php" class="btn btn-orange">Ir al inicio</a></div>
                         <!-- end f-list-block -->
-
-
-
-                        <!-- <div class="pages">
-                            <ol class="pagination">
-                                <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
-                            </ol>
-                        </div> -->
-                        <!-- end pages -->
                     </div>
                     <!-- FIN -->
                     <!-- end columns -->
@@ -517,41 +386,8 @@ include("../base_datos/db.php");
             <!-- end container -->
         </div>
         <!-- end flight-listings -->
-
     </section>
-
-    <!--================ FORMAS DE PAGO ==============-->
-    <section id="latest-blog" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-sm-12">
-                    <div class="page-heading">
-                        <h2>Métodos de pago</h2>
-                        <hr class="heading-line" />
-                    </div>
-
-                    <div class="list-container">
-                        <div class="list__item">
-                            <div class="list__item__img">
-                                <img src="../images/payment-1.png" alt="master-card">
-                            </div>
-                            <div class="list__item__img">
-                                <img src="../images/payment-2.png" alt="master-card">
-                            </div>
-                            <div class="list__item__img">
-                                <img src="../images/payment-3.png" alt="master-card">
-                            </div>
-                            <div class="list__item__img">
-                                <img src="../images/payment-4.png" alt="master-card">
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- end innerpage-wrapper -->
 
     <!--======================= FOOTER =======================-->
     <section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
