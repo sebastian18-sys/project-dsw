@@ -266,14 +266,14 @@
                                     <div>
 
                                         <div class="col-lg-6 form-group">
-                                            <input type="text" class="form-control-dates" placeholder="DNI" name="dni-usu" required/>
+                                            <input autocomplete="off" type="text" class="form-control-dates" placeholder="DNI" name="dni-usu" required/>
                                             <span>
                                                 <i class="fa fa-id-card" aria-hidden="true"></i>
                                             </span>
                                         </div>
 
                                         <div class="col-lg-6 form-group">
-                                            <input type="text" class="form-control-dates" placeholder="Código del boleto" name="boleto-usu" required/>
+                                            <input autocomplete="off" type="text" class="form-control-dates" placeholder="Código del boleto" name="boleto-usu" required/>
                                             <span>
                                                 <i class="fa fa-ticket" aria-hidden="true"></i>
                                             </span>

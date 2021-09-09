@@ -15,7 +15,7 @@ $date = $_SESSION['fecha'];
     <title>Buscar pasaje</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="../images/icon-web.png" />
+    <link rel="icon" href="./images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -264,9 +264,9 @@ $date = $_SESSION['fecha'];
                             <div class="col-xs-12 col-sm-6 col-md-12">
                                 <div class="side-bar-block support-block">
                                     <h3>Necesitas ayuda?</h3>
-                                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum.</p>
+                                    <p>Necesitas ayuda? Si deseas mayor información sobre tu viaje, si tienes dudas sobre los servicios que ofrecemos o deseas realizar una consulta; también puedes comunicarte a nuestra línea de atención al cliente.</p>
                                     <div class="support-contact"><span><i class="fa fa-phone"></i></span>
-                                        <p>+1 123 1234567</p>
+                                        <p>(01) 5891260</p>
                                     </div>
                                     <!-- end support-contact -->
                                 </div>
@@ -294,34 +294,13 @@ $date = $_SESSION['fecha'];
                             <h4><strong> <?php echo $buses_disponibles ?> bus(es)</strong> encontrados</h4>
                             <hr class="heading-line" />
                         </div>
-                        <div class="list-block main-block f-list-block">
-                            <!-- <div class="list-content">
-                                <div class="main-img list-img f-list-img">
-                                    <a href="flight-detail-left-sidebar.html">
-                                        <div class="f-img"><img src="images/flight-1.jpg" class="img-responsive" alt="flight-img" /></div>
-                    
-                                    </a>
-                                    <ul class="list-unstyled list-inline offer-price-1">
-                                        <li class="duration"><i class="fa fa-clock-o"></i><span>6 hours - 30 minutes</span></li>
-                                        <li class="price">$568.00<span class="divider">|</span><span class="pkg">2 Stay</span></li>
-                                    </ul>
-                                    <ul class="list-unstyled flight-timing">
-                                        <li><span><i class="fa fa-plane"></i></span><span class="date">Aug, 02-2017 </span>(8:40 PM)</li>
-                                        <li><span><i class="fa fa-plane"></i></span><span class="date">Aug, 03-2017 </span>(8:40 PM)</li>
-                                    </ul>
-                                </div>
-               
-                                <div class="list-info f-list-info">
-                                    <h3 class="block-title"><a href="flight-detail-left-sidebar.html">Sydney to Paris</a></h3>
-                                    <p class="block-minor"><span>Fr 5379,</span>Oneway Flight</p>
-                                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</p><a href="flight-detail-left-sidebar.html"
-                                        class="btn btn-orange">View More</a></div>
-         
-                            </div> -->
-                            <div class="table-responsive">
-                                <table tabindex="0" class="table table-bordered table-striped">
+                        <form action="buscarAsiento.php" method="POST">
+                            <div class="list-block main-block f-list-block">
+                            
+                                <div class="table-responsive">
+                                    <table tabindex="0" class="table table-bordered table-striped">
 
-                                    <form action="buscarAsiento.php" method="POST">
+                                        
                                         <!-- Cabecera de la tabla -->
                                         <thead class="table-search-head">
                                             <tr>
@@ -337,9 +316,7 @@ $date = $_SESSION['fecha'];
                                         </thead>
 
                                         <tbody class="table-search-content">
-                                            
-
-                                            
+                                                        
                                             <?php
 
                                             $query = "SELECT b.id, b.ciudad_salida ,b.hora_salida,b.precio,b.hora_llegada, b.fecha_salida, b.ciudad_llegada from itinerarios b where b.ciudad_salida like('$origin') and b.ciudad_llegada like('$destiny') and b.fecha_salida like('$date')";
@@ -355,26 +332,25 @@ $date = $_SESSION['fecha'];
                                                 <td><?php echo $row['ciudad_llegada'] ?></td>
                                                 <td><?php echo $row['hora_llegada'] ?></td>
                                                 <td><?php echo "S/. " . $row['precio'] ?></td>
-                                                <!-- <td class="text-center">
-                                                    <a href="./buscarAsiento.php" class="btn btn-orange" data-toggle="">Ver asientos</a>
-                                                </td> -->
-                                            </tr>
+                                                    <!-- <td class="text-center">
+                                                        <a href="./buscarAsiento.php" class="btn btn-orange" data-toggle="">Ver asientos</a>
+                                                    </td> -->
+                                                </tr>
 
                                             <?php } ?>
-                                            
+                                                
                                         </tbody>
-                                        <input type="submit" name="pasaje-bus" class="btn btn-orange" value="Ver asientos">
-                                    </form>
-                                </table>
+                                            
+                                    </table>
 
-
-
-
+                                </div>
+                                
+                                <!-- /.box-body -->
+                                <!-- end list-content -->
+                            
                             </div>
-                            <!-- /.box-body -->
-                            <!-- end list-content -->
-                        </div>
-                        
+                            <input type="submit" name="pasaje-bus" class="btn btn-orange" value="Ver asientos">
+                        </form>
                         
                         <?php 
                         // En caso no se encuentren buses se coloca la siguiente etiqueta

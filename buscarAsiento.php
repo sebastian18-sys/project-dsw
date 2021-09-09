@@ -18,7 +18,7 @@ $date = $_SESSION['fecha'];
     <title>Buscar pasaje</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="../images/icon-web.png" />
+    <link rel="icon" href="./images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -197,7 +197,7 @@ if(isset($_POST['pasaje-bus'])) {
                     </span>
                     </a>
                 </div>
-                <a href="#" class="navbar-brand">
+                <a href="./index.php" class="navbar-brand">
                     <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
@@ -553,11 +553,10 @@ if(isset($_POST['pasaje-bus'])) {
                                         <input type="hidden" id="id_corrida" value="<?php echo $seleccionado; ?>" />
                                         
                                         <div class="button-container col-lg-12">
+                                                <input type="submit" name="comprar-asiento" id="continuar" onclick="Util.avanzar();" class="next-button" value="Siguiente">
                                             
-                                            <input type="submit" name="comprar-asiento" id="continuar" onclick="Util.avanzar();" class="btn btn-orange" value="Siguiente">
-                                    
-                                            <a href="./buscar-pasaje.php"> <input class="back-button" type="button" value="REGRESAR"> </a>
-
+                                                <a href="./buscar-pasaje.php"> <input class="back-button" type="button" value="Regresar"> </a>
+                                            
                                             
                                         </div>
                                         

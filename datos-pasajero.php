@@ -35,7 +35,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
     <title>Datos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="../images/icon-web.png" />
+    <link rel="icon" href="./images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
@@ -86,7 +86,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.html" class="covid-button"><span>
+                    <a href="./covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
@@ -330,7 +330,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                             <p>Asiento: <?php echo $labelAsiento ?></p>
                                         </div>
                                         <div class="details-footer">
-                                            <h4>Total a pagar <strong>S/.<?php echo $_SESSION['ciudad-precio']; ?></strong></h4>
+                                            <h4>Pago por asiento <strong>S/.<?php echo $_SESSION['ciudad-precio']; ?></strong></h4>
                                         </div>
                       
                                     </div>
@@ -342,7 +342,7 @@ if(isset($_GET['id']) && isset($_GET['as'])){
                                 <?php } $_SESSION['number'] = $i; ?>
 
                                 <div class="button-container col-sm-6">
-                                    <a href="./buscarAsiento.php"> <input class="back-button" type="button" value="Regresar"> </a>
+                                    <a href="./buscar-pasaje.php    "> <input class="back-button" type="button" value="Regresar"> </a>
                                     
                                 </div>
                                 <div class="button-container col-sm-6">

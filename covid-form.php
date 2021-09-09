@@ -159,7 +159,7 @@
           </div>
           <div class="list-group panel">
             <a
-              href="./index.html"
+              href="./index.php"
               class="list-group-item active"
               data-parent="#main-menu"
             >
@@ -184,8 +184,7 @@
               <span><i class="fa fa-chevron-down arrow"></i></span>
             </a>
             <div class="collapse sub-menu" id="hotels-links">
-              <a href="" class="list-group-item">Encomiendas</a>
-              <a href="" class="list-group-item">Mudanzas</a>
+              <a href="./encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
             </div>
 
             <a
@@ -199,7 +198,7 @@
             </a>
             <div class="collapse sub-menu" id="tours-links">
               <a href="./destinations.html" class="list-group-item">Destinos</a>
-              <a href="tour-listing-left-sidebar.html" class="list-group-item"
+              <a href="./rutas.html" class="list-group-item"
                 >Rutas</a
               >
             </div>
@@ -214,7 +213,7 @@
             </a>
 
             <a
-              href="./contact-us.html"
+              href="./contact-us.php"
               class="list-group-item"
               data-toggle="collapse"
               data-parent="#main-menu"
@@ -534,7 +533,7 @@
                           type="submit"
                           value="Enviar"
                         />
-                        <a href="./familia.php">
+                        <a href="./covid-19.php">
                           <input
                             class="back-button"
                             type="button"
