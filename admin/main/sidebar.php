@@ -24,9 +24,12 @@ error_reporting(0);
             <!-- CONSULTAS -->
             <li><a><i class="fa fa-home"></i> Consultas <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">                    
-                    <li><a href="./consultar_itinerarios.php">Itinerarios</a></li>  
+                    <li><a href="./consultar_itinerarios.php">Itinerarios</a></li> 
+                    <li><a href="./consultar_boletos.php">Boletos</a></li> 
                     <li><a href="./devoluciones.php">Devoluciones</a></li>
-                    <li><a href="#">Autobus</a></li>
+                    <li><a href="./consultar_choferes.php">Choferes</a></li>
+                    <li><a href="./consultar_autobuses.php">Autobuses</a></li>
+                    
                 </ul>
             </li>
         </ul>
