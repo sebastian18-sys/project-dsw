@@ -1,40 +1,53 @@
-<?php 
-
+<?php
 session_start();
-include("base_datos/db.php");
-
-$codigo_boleto = $_SESSION['CODIGO_BOLETO'];
-$tarjetafinal = $_SESSION['tarjeta'];
-$preciofinal = $_SESSION['precio-total'];
-$correofinal = $_SESSION['correo-email'];
-// $dnifinal = $_SESSION['dni'];
-$cardfinal = $_SESSION['cardh'];
-$origenfinal = $_SESSION['origen'];
-$destinofinal = $_SESSION['destino'];
-$fechafinal= $_SESSION['fecha'];
+include("../base_datos/db.php");
 ?>
 
+<?php
+if(isset($_GET['id']) && isset($_GET['as'])){
+
+	//Cargamos los valores de los datos.
+	$id_boleto=base64_decode($_GET['id']);
+	$asientos=base64_decode($_GET['as']);
+	$asientos=explode(",",$asientos);
+	//Creamos la consulta SQL para los datos de la corrida.
+
+    $_SESSION['id-boleto'] = $id_boleto;
+
+    $consulta="SELECT * FROM `itinerarios` WHERE `id` = $id_boleto";
+	$tabla = mysqli_query($link, $consulta);
+
+    while($row = mysqli_fetch_assoc($tabla)) { 
+
+        $_SESSION['ciudad-ori'] = $row['ciudad_salida'];
+        $_SESSION['ciudad-dest'] = $row['ciudad_llegada'];
+        $_SESSION['ciudad-fech'] = $row['fecha_salida'];
+        $_SESSION['ciudad-hora'] = $row['hora_salida'];
+        $_SESSION['ciudad-precio'] = $row['precio'];
+
+    }
+?>
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <title>Confirmación pasaje</title>
+    <title>Datos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/icon-web.png" />
+    <link rel="icon" href="./images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" id="cpswitch" href="css/orange.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" id="cpswitch" href="../css/orange.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <!--Jquery UI Stylesheet-->
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
 </head>
 
 <body>
@@ -143,7 +156,7 @@ $fechafinal= $_SESSION['fecha'];
     <!-- end navbar -->
     <div class="sidenav-content">
         <div id="mySidenav" class="sidenav">
-            <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Wiñaymarca</h2>
+            <h2 id="web-name"><span><i class="fa fa-bus"></i></span>Wiñaymarca</h2>
             <div id="main-menu">
                 <div class="closebtn">
                     <button class="btn btn-default" id="closebtn">&times;</button>
@@ -162,7 +175,7 @@ $fechafinal= $_SESSION['fecha'];
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="" class="./encomiendas/encomiendas.php">Encomiendas</a>
+                        <a href="./encomiendas/encomiendas.php" class="list-group-item">Encomiendas</a>
                     </div>
 
 
@@ -195,7 +208,7 @@ $fechafinal= $_SESSION['fecha'];
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="page-title">Confirmación pago</h1>
+                    <h1 class="page-title">Datos del pasajero</h1>
                     <ul class="breadcrumb">
                     </ul>
                 </div>
@@ -213,64 +226,148 @@ $fechafinal= $_SESSION['fecha'];
                 <div class="row">
 
                     <!-- end columns -->
-                    <div id="boleto" class="col-xs-12 col-sm-12 col-md-12 content-side">
+                    <div class="col-xs-12 col-sm-12 col-md-12 content-side">
+                        <h2><?php echo $_SESSION['ciudad-ori'] ?> <i class="fa fa-arrow-right" aria-hidden="true"></i> <?php echo $_SESSION['ciudad-dest'] ?></h2>
+                        <p>Fecha: <?php echo $_SESSION['ciudad-fech'] ?></p>
+                        <div class="page-search">
+                            <h4>Ingresa tus <strong>datos</strong></h4>
+                            <hr class="heading-line" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 content-side">
                         <div class="list-block main-block f-list-block">
                             <!-- <div class="container">
                                 <div class="row"> -->
-                            <div class="container-head">
-                                <h2>Wiñaymarca</h2>
-                            </div>
-                            <div class="container-text">
-                                <div class="text-datos">
-                                    <h3>Hola,&nbsp; </h3>
-                                    <h3>gracias por confiar Wiñaymarca</h3>
+                            <form action="registrar-nuevo-pasajero.php" method="POST">
+                                <?php
+                                        // $query = "SELECT * FROM itinerarios where reservado = false";
+                                        // $select = mysqli_query($conn, $query); 
+                                        // $num = mysqli_num_rows($select);
+                                        // echo $num;
+                                for($i = 0; $i<count($asientos); $i++) {
+                                    $labelAsiento = substr($asientos[$i], -2); 
+                                    $_SESSION['asiento'.$i] = $labelAsiento
+                                ?>
+                                        
+                                <div class="container-dates">
+                                    <div class="container-dates__form col-lg-8">
+                                        
+                                            <div class="form-head col-lg-12">
+                                                <h4>Datos del pasajero</h4>
+                                                <hr>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Nombres:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                                        <input type="text" class="form-control-dates" placeholder="Nombres"  name="nombres<?php echo$i ?>" required="required" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Apellidos:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                                        <input type="text" class="form-control-dates" placeholder="Apellidos" name="apellidos<?php echo$i ?>" required="required" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>DNI:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-id-card" aria-hidden="true"></i>
+                                                        <input type="text" class="form-control-dates" placeholder="DNI" name="dni<?php echo$i ?>" required="required" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Genero:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                                        <select class="form-control-dates" name="genero<?php echo$i ?>" id="">
+                                                            <option>Masculino</option>
+                                                            <option>Femenino</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Telefono:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                                        <input type="text" class="form-control-dates" placeholder="Telefono" name="telefono<?php echo$i ?>" required="required" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Correo:</label>
+                                                    <div class="group">
+                                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                        <input type="email" class="form-control-dates" placeholder="Correo" name="correo<?php echo$i ?>" required="required" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="container-dates__details col-lg-4">
+                                        <div class="details-head">
+                                            <h4>Detalles de tu compra</h4>
+                                            <hr>
+                                        </div>
+                                        <div class="details-main">
+                                            <p>-- Viaje Wiñaymarca --</p>
+                                            <!-- <p>PreciS/.100</p> -->
+                                            <!-- <p>Lima <i class="fa fa-arrow-right" aria-hidden="true"></i> Ica</p> -->
+                                            <p>Fecha de salida: <?php echo $_SESSION['ciudad-fech']; ?></p>
+                                            <p>Origen: <?php echo $_SESSION['ciudad-ori']; ?></p>
+                                            <p>Destino: <?php echo $_SESSION['ciudad-dest']; ?></p>
+                                            <p>Hora: <?php echo $_SESSION['ciudad-hora']; ?></p>
+                                            <p>Asiento: <?php echo $labelAsiento ?></p>
+                                        </div>
+                                        <div class="details-footer">
+                                            <h4>Pago por asiento <strong>S/.<?php echo $_SESSION['ciudad-precio']; ?></strong></h4>
+                                        </div>
+                      
+                                    </div>
                                 </div>
-                                <p>En breve te enviaremos un email donde estará tu <br>constancia de operación</p>
-                                <div class="container-monto">
-                                    <h3>Monto Pagado</h3>
-                                    <h2><strong>S/.<?php echo $preciofinal ?></strong></h2>
-                                </div>
-                                <div class="container-monto">
-                                    <h3>Detalles de la operación</h3>
-                                    <div class="text-datos">
-                                        <p>Correo electrónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $correofinal ?></p>
-                                    </div>
-                                    <div class="text-datos">
-                                        <p>DNI:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $cardfinal ?></p>
-                                    </div>
-                                    <div class="text-datos">
-                                        <p>Origen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $origenfinal ?></p>
-                                    </div>
-                                    <div class="text-datos">
-                                        <p>Destino:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $destinofinal ?></p>
-                                    </div>
-                                    <div class="text-datos">
-                                        <p>Fecha:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $fechafinal ?></p>
-                                    </div>
-                                    <div class="text-datos">
-                                        <p>Tarjeta de crédito:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $tarjetafinal ?></p>
-                                    </div>
-                                    <div class="text-datos">
-                                        <p>Código del boleto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                                        <p><?php echo $codigo_boleto ?></p>
-                                    </div>
-                                </div>
-                            </div>
-
                             <!-- </div>
                             </div> -->
                             <!-- /.box-body -->
                             <!-- end list-content -->
+                                <?php } $_SESSION['number'] = $i; ?>
+
+                                <div class="button-container col-sm-6">
+                                    <a href="./buscar_pasaje_reprogramado.php"> <input class="back-button" type="button" value="Regresar"> </a>
+                                    
+                                </div>
+                                <div class="button-container col-sm-6">
+                                    <Input class="next-button" name="Registrar_Pasajero" Type="submit" value="Continuar">
+                                    
+                                </div>
+                                
+                                
+                            </form>
                         </div>
-                        <div class="view-all text-center"><a href="javascript:void(0);" onclick="Util.imprimirBoleto();">Imprimir Boleto</div>
-                        <div class="view-all text-center"><a href="./index.php" class="btn btn-orange">Ir al inicio</a></div>
                         <!-- end f-list-block -->
+
+
+
+                        <!-- <div class="pages">
+                            <ol class="pagination">
+                                <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
+                            </ol>
+                        </div> -->
+                        <!-- end pages -->
                     </div>
                     <!-- FIN -->
                     <!-- end columns -->
@@ -392,87 +489,15 @@ $fechafinal= $_SESSION['fecha'];
     </section>
     <!-- end footer -->
     <!-- Page Scripts Starts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom-navigation.js"></script>
-    <script src="js/custom-price-slider.js"></script>
-    <script src="js/util.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/custom-navigation.js"></script>
+    <script src="../js/custom-price-slider.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/util.js"></script>
     <!-- Page Scripts Ends -->
-
-    <!-- INICIO -->
-    <?php
-    // Import PHPMailer classes into the global namespace
-    // These must be at the top of your script, not inside a function
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-
-
-    require './email/vendor/autoload.php';
-
-    $sender = 'ventaswinaymarcasac@gmail.com';
-    $senderName = '-- Winaymarca --';
-
-    $recipient = $correofinal;
-
-    // Replace smtp_username with your Amazon SES SMTP user name.
-    $usernameSmtp = 'AKIASNDTXSRAEQIIK3V7';
-
-    // Replace smtp_password with your Amazon SES SMTP password.
-    $passwordSmtp = 'BILvjKocE3/MeGyxtt1vQWZI239Xz+HdzEbY0Jjmtaly';
-
-    $host = 'email-smtp.us-east-2.amazonaws.com';
-    $port = 587;
-
-    // The subject line of the email
-    $subject = '-- GRACIAS POR COMPRAR SU PASAJE WINAYMARCA --';
-
-    // The plain-text body of the email
-    $bodyText =  "Esperemos que su viaje sea de su agrado";
-
-    // The HTML-formatted body of the email
-    $bodyHtml = "<html><body>"
-    ."<table class='tg' style='border-style: dotted;'>"
-              ."<tr><td class='tg-3zav'>DNI: </td><td class='tg-3zav'>" . $dnifinal . "</td></tr>"
-              ."<tr><td class='tg-3zav'>Origen: </td><td class='tg-3zav'>" . $origenfinal . "</td></tr>"
-              ."<tr><td class='tg-3zav'>Destino: </td><td class='tg-3zav'>" . $destinofinal . "</td></tr>"
-              ."<tr><td class='tg-3zav'>Fecha de viaje: </td><td class='tg-3zav'>" . $fechafinal. "</td></tr>"
-              ."<tr><td class='tg-3zav'>Código de boleto: </td><td class='tg-3zav'>" . $codigo_boleto . "</td></tr>"
-              . "</table></body></html>";
-    
-
-    $mail = new PHPMailer(true);
-
-    try {
-        // Specify the SMTP settings.
-        $mail->isSMTP();
-        $mail->setFrom($sender, $senderName);
-        $mail->Username   = $usernameSmtp;
-        $mail->Password   = $passwordSmtp;
-        $mail->Host       = $host;
-        $mail->Port       = $port;
-        $mail->SMTPAuth   = true;
-        $mail->SMTPSecure = 'tls';
-    //  $mail->addCustomHeader('X-SES-CONFIGURATION-SET', $configurationSet);
-
-        // Specify the message recipients.
-        $mail->addAddress($recipient);
-        // You can also add CC, BCC, and additional To recipients here.
-
-        // Specify the content of the message.
-        $mail->isHTML(true);
-        $mail->Subject    = $subject;
-        $mail->Body       = $bodyHtml;
-        $mail->AltBody    = $bodyText;
-        $mail->Send();
-        echo "Correo enviado!" , PHP_EOL;
-    } catch (phpmailerException $e) {
-        echo "An error occurred. {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
-    } catch (Exception $e) {
-        echo "Email not sent. {$mail->ErrorInfo}", PHP_EOL; //Catch errors from Amazon SES.
-    }
-    ?>
-    <!-- FIN -->
-    </body>
+</body>
 
 </html>
+
+<?php } ?>

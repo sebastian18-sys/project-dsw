@@ -9,9 +9,10 @@ $preciofinal = $_SESSION['precio-total'];
 $correofinal = $_SESSION['correo-email'];
 // $dnifinal = $_SESSION['dni'];
 $cardfinal = $_SESSION['cardh'];
-$origenfinal = $_SESSION['origen'];
-$destinofinal = $_SESSION['destino'];
-$fechafinal= $_SESSION['fecha'];
+
+$origenfinal = $_SESSION['CIUDAD_ORIGEN'];
+$destinofinal = $_SESSION['CIUDAD_LLEGADA'];
+$fechafinal = $_SESSION['NUEVA_FECHA_VIAJE'];
 ?>
 
 
@@ -22,19 +23,19 @@ $fechafinal= $_SESSION['fecha'];
     <title>Confirmación pasaje</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="images/icon-web.png" />
+    <link rel="icon" href="../images/icon-web.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i%7CMerriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" id="cpswitch" href="css/orange.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" id="cpswitch" href="../css/orange.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <!--Jquery UI Stylesheet-->
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
 </head>
 
 <body>
@@ -73,13 +74,13 @@ $fechafinal= $_SESSION['fecha'];
                     <!-- <a href="javascript:void(0)" class="search-button">
                         <span><i class="fa fa-search"></i></span>
                     </a> -->
-                    <a href="./covid-19.php" class="covid-button"><span>
+                    <a href="../covid-19.php" class="covid-button"><span>
                         <!-- <i class="fa fa-search"></i> -->
                         Covid-19
                     </span>
                     </a>
                 </div>
-                <a href="./index.php" class="navbar-brand">
+                <a href="../index.php" class="navbar-brand">
                     <span><i class="fa fa-bus"></i>WIÑAY</span>MARCA
                 </a>
             </div>
@@ -87,14 +88,14 @@ $fechafinal= $_SESSION['fecha'];
             <div class="collapse navbar-collapse" id="myNavbar1">
                 <ul class="nav navbar-nav navbar-right navbar-search-link">
                     <li class="dropdown">
-                        <a href="./index.php" class="dropdown-toggle">Inicio
+                        <a href="../index.php" class="dropdown-toggle">Inicio
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./about-us.html" class="dropdown-toggle">Nosotros
+                        <a href="../about-us.html" class="dropdown-toggle">Nosotros
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
@@ -107,30 +108,30 @@ $fechafinal= $_SESSION['fecha'];
                             </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="./encomiendas/encomiendas.php">Encomiendas</a></li>
+                            <li><a href="../encomiendas/encomiendas.php">Encomiendas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Trayectos<span><i
                                     class="fa fa-angle-down"></i></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./destinations.html">Destinos</a></li>
-                            <li><a href="./rutas.html">Rutas</a></li>
+                            <li><a href="../destinations.html">Destinos</a></li>
+                            <li><a href="../rutas.html">Rutas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="./faq.html" class="dropdown-toggle">Ayuda
+                        <a href="../faq.html" class="dropdown-toggle">Ayuda
                             <span>
                                 <!-- <i class="fa fa-angle-down"></i> -->
                             </span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="./contact-us.php" class="dropdown-toggle">Contacto
+                        <a href="../contact-us.php" class="dropdown-toggle">Contacto
                             <span>
                             </span>
                         </a>
                     </li>
-                    <li><a href="./covid-19.php" class="search-button"><span>
+                    <li><a href="../covid-19.php" class="search-button"><span>
                         Covid-19
                     </span>
                     </a></li>
@@ -149,11 +150,11 @@ $fechafinal= $_SESSION['fecha'];
                     <button class="btn btn-default" id="closebtn">&times;</button>
                 </div>
                 <div class="list-group panel">
-                    <a href="./index.php" class="list-group-item active" data-parent="#main-menu">
+                    <a href="../index.php" class="list-group-item active" data-parent="#main-menu">
                         <span><i class="fa fa-home link-icon"></i></span>Inicio
                     </a>
 
-                    <a href="./about-us.html" class="list-group-item" data-parent="#main-menu">
+                    <a href="../about-us.html" class="list-group-item" data-parent="#main-menu">
                         <span><i class="fa fa-plane link-icon"></i></span>Nosotros
                     </a>
 
@@ -162,7 +163,7 @@ $fechafinal= $_SESSION['fecha'];
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="hotels-links">
-                        <a href="" class="./encomiendas/encomiendas.php">Encomiendas</a>
+                        <a href="" class="../encomiendas/encomiendas.php">Encomiendas</a>
                     </div>
 
 
@@ -171,15 +172,15 @@ $fechafinal= $_SESSION['fecha'];
                         <span><i class="fa fa-chevron-down arrow"></i></span>
                     </a>
                     <div class="collapse sub-menu" id="tours-links">
-                        <a href="./destinations.html" class="list-group-item">Destinos</a>
-                        <a href="./rutas.html" class="list-group-item">Rutas</a>
+                        <a href="../destinations.html" class="list-group-item">Destinos</a>
+                        <a href="../rutas.html" class="list-group-item">Rutas</a>
                     </div>
 
-                    <a href="./faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../faq.html" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-ship link-icon"></i></span>Ayuda
                     </a>
 
-                    <a href="./contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
+                    <a href="../contact-us.php" class="list-group-item" data-toggle="collapse" data-parent="#main-menu">
                         <span><i class="fa fa-car link-icon"></i></span>Contacto
                     </a>
                 </div>
@@ -269,7 +270,7 @@ $fechafinal= $_SESSION['fecha'];
                             <!-- end list-content -->
                         </div>
                         <div class="view-all text-center"><a href="javascript:void(0);" onclick="Util.imprimirBoleto();">Imprimir Boleto</div>
-                        <div class="view-all text-center"><a href="./index.php" class="btn btn-orange">Ir al inicio</a></div>
+                        <div class="view-all text-center"><a href="../index.php" class="btn btn-orange">Ir al inicio</a></div>
                         <!-- end f-list-block -->
                     </div>
                     <!-- FIN -->
@@ -296,16 +297,16 @@ $fechafinal= $_SESSION['fecha'];
                     <div class="list-container">
                         <div class="list__item">
                             <div class="list__item__img">
-                                <img src="./images/payment-1.png" alt="master-card">
+                                <img src="../images/payment-1.png" alt="master-card">
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-2.png" alt="master-card">
+                                <img src="../images/payment-2.png" alt="master-card">
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-3.png" alt="master-card">
+                                <img src="../images/payment-3.png" alt="master-card">
                             </div>
                             <div class="list__item__img">
-                                <img src="./images/payment-4.png" alt="master-card">
+                                <img src="../images/payment-4.png" alt="master-card">
                             </div>
 
                         </div>
@@ -392,12 +393,12 @@ $fechafinal= $_SESSION['fecha'];
     </section>
     <!-- end footer -->
     <!-- Page Scripts Starts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom-navigation.js"></script>
-    <script src="js/custom-price-slider.js"></script>
-    <script src="js/util.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/custom-navigation.js"></script>
+    <script src="../js/custom-price-slider.js"></script>
+    <script src="../js/util.js"></script>
     <!-- Page Scripts Ends -->
 
     <!-- INICIO -->
@@ -408,7 +409,7 @@ $fechafinal= $_SESSION['fecha'];
     use PHPMailer\PHPMailer\Exception;
 
 
-    require './email/vendor/autoload.php';
+    require '../email/vendor/autoload.php';
 
     $sender = 'ventaswinaymarcasac@gmail.com';
     $senderName = '-- Winaymarca --';
